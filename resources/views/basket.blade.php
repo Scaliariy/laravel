@@ -1,9 +1,8 @@
-@extends('master')
+@extends('layouts.master')
 
 @section('title', 'Корзина')
 
 @section('content')
-    <div class="starter-template">
         <h1>Корзина</h1>
         <p>Оформление заказа</p>
         <div class="panel">
@@ -22,15 +21,18 @@
                         <td>
                             <a href="{{route('product',[$product->category->code, $product->code])}}">
                                 <img height="56px"
-                                     src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_x.jpg">
+                                     src="https://cdn.pixabay.com/photo/2013/07/13/12/46/iphone-160307_960_720.png">
                                 {{$product->name}}
                             </a>
                         </td>
-                        <td><span class="badge">1</span>
-                            <div class="btn-group">
-                                <a type="button" class="btn btn-danger"
-                                   href="http://laravel-diplom-1.rdavydov.ru/basket/1/remove"><span
-                                        class="glyphicon glyphicon-minus" aria-hidden="true"></span></a>
+                        <td><span class="badge">{{$product->pivot->count}}</span>
+                            <div class="btn-group form-inline">
+                                <form action="{{route('basket-remove', $product)}}" method="POST">
+                                    <button type="submit" class="btn btn-danger"
+                                            href=""><span
+                                            class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                    @csrf
+                                </form>
                                 <form action="{{route('basket-add', $product)}}" method="POST">
                                     <button type="submit" class="btn btn-success"
                                             href=""><span
@@ -41,16 +43,19 @@
                             </div>
                         </td>
                         <td>{{$product->price}} руб.</td>
-                        <td>{{$product->price}} руб.</td>
+                        <td>{{$product->getPriceForCount()}} руб.</td>
                     </tr>
                 @endforeach
+                <tr>
+                    <td colspan="3">Общая стоимость:</td>
+                    <td>{{$order->getFullPrice()}} руб.</td>
+                </tr>
                 </tbody>
             </table>
             <br>
             <div class="btn-group pull-right" role="group">
-                <a type="button" class="btn btn-success" href="http://laravel-diplom-1.rdavydov.ru/basket/place">Оформить
+                <a type="button" class="btn btn-success" href="{{route('basket-place')}}">Оформить
                     заказ</a>
             </div>
         </div>
-    </div>
 @endsection
