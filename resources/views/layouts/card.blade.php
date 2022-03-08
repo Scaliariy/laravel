@@ -1,6 +1,6 @@
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-        <img src="https://cdn.pixabay.com/photo/2013/07/13/12/46/iphone-160307_960_720.png" alt="iPhone X 64GB">
+        <img src="{{\Illuminate\Support\Facades\Storage::url($product->image)}}" alt="iPhone X 64GB">
         <div class="caption">
             <h3>{{$product->name}}</h3>
             <p>{{$product->price}} руб. </p>

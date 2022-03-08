@@ -22,7 +22,7 @@
                         <td>
                             <a href="{{route('product',[$product->category->code, $product->code])}}">
                                 <img height="56px"
-                                     src="https://cdn.pixabay.com/photo/2013/07/13/12/46/iphone-160307_960_720.png">
+                                     src="{{\Illuminate\Support\Facades\Storage::url($product->image)}}">
                                 {{$product->name}}
                             </a>
                         </td>

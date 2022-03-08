@@ -2,7 +2,7 @@
 @section('title', 'Категория' . $category->name)
 @section('content')
     <h1>
-        {{$category->name}}{{$category->products->count()}}
+        {{$category->name}}
     </h1>
     <p>
         {{$category->description}}
