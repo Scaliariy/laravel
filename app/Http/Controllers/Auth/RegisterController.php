@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,12 +28,17 @@ class RegisterController extends Controller
     /**
      * Where to redirect users after registration.
      *
-     * @var string
+     *
+     * @return string|void
      */
 
     protected function redirectTo()
     {
-        return route('home');
+        if (Auth::user()->isAdmin()) {
+            return route('home');
+        } else {
+            return route('person.orders.index');
+        }
     }
 
     /**

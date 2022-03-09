@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -24,12 +25,17 @@ class LoginController extends Controller
     /**
      * Where to redirect users after login.
      *
-     * @var string
+     *
+     * @return string|void
      */
 
     protected function redirectTo()
     {
-        return route('home');
+        if (Auth::user()->isAdmin()) {
+            return route('home');
+        } else {
+            return route('person.orders.index');
+        }
     }
 
     /**
