@@ -54,9 +54,9 @@
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" v-pre>
                                 @admin
-                                Администратор
+                                Администратор - {{\Illuminate\Support\Facades\Auth::user()->name}}
                                 @else
-                                    Пользователь {{\Illuminate\Support\Facades\Auth::user()->name}}
+                                    Пользователь - {{\Illuminate\Support\Facades\Auth::user()->name}}
                                     @endadmin
                             </a>
 
