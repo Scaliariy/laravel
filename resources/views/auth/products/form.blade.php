@@ -95,8 +95,8 @@
                 ] as $field => $title)
                     <div class="form-group row">
                         <label for="code" class="col-sm-2 col-form-label">{{$title}}</label>
-                        <div class="col-sm-6">
-                            <input type="checkbox" class="form-control" name="{{$field}}" id="{{$field}}"
+                        <div class="col-sm-10">
+                            <input type="checkbox" class="form-check-label big-checkbox" name="{{$field}}" id="{{$field}}"
                                    @if(isset($product) && $product->$field === 1)
                                    checked="checked"
                                 @endif

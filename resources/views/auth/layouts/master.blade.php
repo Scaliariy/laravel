@@ -34,7 +34,9 @@
                     <li><a href="{{ route('products.index') }}">Товары</a></li>
                     <li><a href="{{ route('home') }}">Заказы</a></li>
                     @endadmin
+                    @person
                     <li><a href="{{ route('person.orders.index') }}">Заказы</a></li>
+                    @endperson
                 </ul>
 
                 @guest
