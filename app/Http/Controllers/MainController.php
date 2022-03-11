@@ -6,13 +6,14 @@ use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductsFilterRequest;
 use App\Models\Category;
 use App\Models\Product;
+use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
     public function index(ProductsFilterRequest $request)
     {
-        $productsQuery = Product::query();
+        $productsQuery = Product::with('category');
 
         if ($request->filled('price_from')) {
             $productsQuery->where('price', '>=', $request->price_from);
