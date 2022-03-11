@@ -25,7 +25,7 @@ class MainController extends Controller
 
         foreach (['hit', 'new', 'recommend'] as $field) {
             if ($request->has($field)) {
-                $productsQuery->where($field, 1);
+                $productsQuery->$field();
             }
         }
 
@@ -49,5 +49,4 @@ class MainController extends Controller
     {
         return view('product', ['product' => $product]);
     }
-
 }
