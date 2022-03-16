@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
+use App\Observers\ProductObserver;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Schema::defaultStringLength(191);
     }
 
     /**
@@ -36,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::if('person', function () {
             return Auth::check() && !Auth::user()->isAdmin();
         });
+
+        Product::observe(ProductObserver::class);
     }
 }

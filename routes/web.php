@@ -37,7 +37,8 @@ Route::middleware([Authenticate::class])->group(function () {
         'as' => 'person.',
     ], function () {
         Route::get('/orders', [App\Http\Controllers\Person\OrderController::class, 'index'])->name('orders.index');
-        Route::get('/orders/{order}', [App\Http\Controllers\Person\OrderController::class, 'show'])->name('orders.show');
+        Route::get('/orders/{order}',
+            [App\Http\Controllers\Person\OrderController::class, 'show'])->name('orders.show');
     });
 
     Route::group([
@@ -56,9 +57,9 @@ Route::middleware([Authenticate::class])->group(function () {
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/categories', [MainController::class, 'categories'])->name('categories');
+Route::post('subscription/{product}', [MainController::class, 'subscribe'])->name('subscription');
 
-Route::group(['prefix' => 'basket',
-], function () {
+Route::group(['prefix' => 'basket'], function () {
     Route::post('/add/{product}', [BasketController::class, 'basketAdd'])->name('basket-add');
 
     Route::group([
