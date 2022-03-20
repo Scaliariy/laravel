@@ -4,16 +4,18 @@ namespace App\Http\Middleware;
 
 use App\Models\Order;
 use Closure;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BasketIsNotEmpty
 {
     /**
      * Handle an incoming request.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param Request $request
+     * @param Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
+     * @return Response|RedirectResponse
      */
     public function handle(Request $request, Closure $next)
     {
@@ -23,7 +25,7 @@ class BasketIsNotEmpty
             return $next($request);
         }
 
-        session()->flash('warning', 'Ваша корзина пуста!');
+        session()->flash('warning', __('basket.cart_is_empty'));
         return redirect()->route('index');
     }
 }
