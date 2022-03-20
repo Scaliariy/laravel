@@ -21,9 +21,9 @@ class BasketController extends Controller
     {
         $email = Auth::check() ? Auth::user()->email : $request->email;
         if ((new Basket())->saveOrder($request->name, $request->phone, $email)) {
-            session()->flash('success', 'Ваш заказ принят в обработку!');
+            session()->flash('success', __('basket.order_has_processed'));
         } else {
-            session()->flash('warning', 'Товар не доступен для заказа в полном объёме' );
+            session()->flash('warning', 'Товар не доступен для заказа в полном объёме');
         }
 
         Order::eraseOrderSum();
@@ -36,7 +36,7 @@ class BasketController extends Controller
         $basket = new Basket();
         $order = $basket->getOrder();
         if (!$basket->countAvailable()) {
-            session()->flash('warning', 'Товар не доступен для заказа в полном объёме' );
+            session()->flash('warning', 'Товар не доступен для заказа в полном объёме');
             return redirect()->route('basket');
         }
         return view('order', compact('order'));
@@ -49,7 +49,7 @@ class BasketController extends Controller
         if ($result) {
             session()->flash('success', 'Добавлен товар ' . $product->name);
         } else {
-            session()->flash('warning', 'Товар ' . $product->name . ' в большем кол-ве не доступен для заказа ' );
+            session()->flash('warning', 'Товар ' . $product->name . ' в большем кол-ве не доступен для заказа ');
         }
 
         return redirect()->route('basket');
