@@ -28,6 +28,7 @@ Auth::routes([
 ]);
 
 Route::get('locale/{locale}', [MainController::class, 'changeLocale'])->name('locale');
+Route::get('currency/{currencyCode}', [MainController::class, 'changeCurrency'])->name('currency');
 
 Route::get('reset', [ResetController::class, 'reset'])->name('reset');
 

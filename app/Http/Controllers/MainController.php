@@ -6,6 +6,7 @@ use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductsFilterRequest;
 use App\Http\Requests\SubscriptionRequest;
 use App\Models\Category;
+use App\Models\Currency;
 use App\Models\Product;
 use App\Models\Subscription;
 use DebugBar\DebugBar;
@@ -71,6 +72,13 @@ class MainController extends Controller
         }
         session(['locale' => $locale]);
         App::setLocale($locale);
+        return redirect()->back();
+    }
+
+    public function changeCurrency($currencyCode)
+    {
+        $currency = Currency::byCode($currencyCode)->firstOrFail();
+        session(['currency' => $currency->code]);
         return redirect()->back();
     }
 }
