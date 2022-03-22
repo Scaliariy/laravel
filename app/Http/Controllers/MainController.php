@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductRequest;
 use App\Http\Requests\ProductsFilterRequest;
 use App\Http\Requests\SubscriptionRequest;
 use App\Models\Category;
 use App\Models\Currency;
 use App\Models\Product;
 use App\Models\Subscription;
-use DebugBar\DebugBar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
