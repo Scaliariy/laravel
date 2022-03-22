@@ -4,27 +4,25 @@ namespace App\Http\Middleware;
 
 use App\Models\Order;
 use Closure;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class BasketIsNotEmpty
 {
     /**
      * Handle an incoming request.
      *
-     * @param Request $request
-     * @param Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return Response|RedirectResponse
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        $orderId = session('orderId');
+        $order = session('order');
 
-        if (!is_null($orderId) && Order::getFullSum() > 0) {
+        if (!is_null($order) && $order->getFullSum() > 0) {
             return $next($request);
         }
 
+        session()->forget('order');
         session()->flash('warning', __('basket.cart_is_empty'));
         return redirect()->route('index');
     }

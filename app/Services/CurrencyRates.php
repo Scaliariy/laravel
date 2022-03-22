@@ -15,7 +15,6 @@ class CurrencyRates
         $baseCurrency = CurrencyConversion::getBaseCurrency();
 
         $url = config('currency_rates.api_url') . '?base=' . $baseCurrency->code;
-
         $response = Http::get($url);
 
         if (!$response->getStatusCode() == 200) {

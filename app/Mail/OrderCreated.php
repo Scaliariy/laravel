@@ -16,7 +16,7 @@ class OrderCreated extends Mailable
 
     /**
      * @param $name
-     * @param $order
+     * @param Order $order
      */
     public function __construct($name, Order $order)
     {
@@ -31,7 +31,7 @@ class OrderCreated extends Mailable
      */
     public function build()
     {
-        $fullSum = $this->order->calculateFullSum();
+        $fullSum = $this->order->getFullSum();
         return $this->view('mail.order_created', [
             'name' => $this->name,
             'fullSum' => $fullSum,
