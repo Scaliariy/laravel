@@ -30,10 +30,9 @@
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">{{ App\Services\CurrencyConversion::getCurrencySymbol() }}<span
-                            class="caret"></span></a>
+                       aria-expanded="false">{{ $currencySymbol }}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        @foreach (App\Services\CurrencyConversion::getCurrencies() as $currency)
+                        @foreach ($currencies as $currency)
                             <li><a href="{{ route('currency', $currency->code) }}">{{ $currency->symbol }}</a></li>
                         @endforeach
                     </ul>
@@ -69,5 +68,29 @@
         @yield('content')
     </div>
 </div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6"><p>Категории товаров</p>
+                <ul>
+                    @foreach($categories as $category)
+                        <li><a href="{{ route('category', $category->code) }}">{{ $category->__('name') }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="col-lg-6"><p>Самые популярные товары</p>
+                <ul>
+                    @foreach ($bestProducts as $bestProduct)
+                        <li>
+                            <a href="{{ route('product', [$bestProduct->category->code, $bestProduct->code]) }}">{{ $bestProduct->name }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
