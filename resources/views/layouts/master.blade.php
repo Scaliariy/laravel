@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/starter-template.css" rel="stylesheet">
 </head>
@@ -26,7 +27,14 @@
                 </li>
                 <li @routeactive('basket*')><a href="{{ route('basket') }}">@lang('main.cart')</a></li>
                 <li><a href="{{ route('reset') }}">@lang('main.reset_project')</a></li>
-                <li><a href="{{ route('locale', __('main.set_lang')) }}">@lang('main.set_lang')</a></li>
+                <li><a href="{{ route('locale', __('main.set_lang')) }}">
+                        @if(Lang::locale() == 'ru')
+                            <img src="/img/uk.png" alt="EN" style="width:50%;height:50%;">
+                        @else
+                            <img src="/img/ru.png" alt="RU" style="width:50%;height:50%;">
+                        @endif
+{{--                        @lang('main.set_lang')--}}
+                    </a></li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"

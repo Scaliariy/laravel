@@ -14,6 +14,9 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('img/favicon.ico') }}">
+
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
