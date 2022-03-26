@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\SkuController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,7 @@ Route::middleware(['set_locale'])->group(function () {
 
             Route::resource('categories', CategoryController::class);
             Route::resource('products', ProductController::class);
+            Route::resource('products/{product}/skus', SkuController::class);
             Route::resource('properties', PropertyController::class);
             Route::resource('properties/{property}/property-options', PropertyOptionController::class);
         });
