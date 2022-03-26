@@ -8,7 +8,7 @@ return [
     'all_categories' => 'Все Категории',
     'category' => 'Категория ',
     'cart' => 'В корзину',
-    'reset_project' => 'Сбросить проект в начальное состояние',
+    'reset_project' => 'Сбросить проект',
     'current_lang' => 'ru',
     'set_lang' => 'en',
     'properties' => [

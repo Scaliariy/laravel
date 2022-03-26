@@ -31,7 +31,14 @@ class MainController extends Controller
             }
         }
 
+        if ($request->filled('search')) {
+            $productsQuery->where('name', 'like', '%' . $request->search . '%');
+        }
+
         $products = $productsQuery->paginate(6)->withPath("?" . $request->getQueryString());
+        if ($products->total() == 0) {
+            session()->now('warning', 'По вашему запросу ничего не найдено');
+        }
 
         return view('index', compact('products'));
     }

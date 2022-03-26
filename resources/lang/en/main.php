@@ -8,7 +8,7 @@ return [
     'all_categories' => 'All categories',
     'category' => 'Category ',
     'cart' => 'Your cart',
-    'reset_project' => 'Reset project to default state',
+    'reset_project' => 'Reset project',
     'current_lang' => 'en',
     'set_lang' => 'ru',
     'properties' => [

@@ -15,7 +15,7 @@
     <link href="/css/starter-template.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-sm">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="{{ route('index') }}">@lang('main.online_shop')</a>
@@ -33,7 +33,7 @@
                         @else
                             <img src="/img/ru.png" alt="RU" style="width:50%;height:50%;">
                         @endif
-{{--                        @lang('main.set_lang')--}}
+                        {{--                        @lang('main.set_lang')--}}
                     </a></li>
 
                 <li class="dropdown">
@@ -46,7 +46,6 @@
                     </ul>
                 </li>
             </ul>
-
             <ul class="nav navbar-nav navbar-right">
                 @guest
                     <li><a href="{{ route('login') }}">@lang('main.login')</a></li>
@@ -61,6 +60,11 @@
                     <li><a href="{{ route('get-logout') }}">@lang('main.logout')</a></li>
                 @endauth
             </ul>
+            <form class="form-inline" method="GET" action="{{route("index")}}">
+                <input class="form-control " style="margin: 10px" type="search" placeholder="Search" aria-label="Search"
+                       name="search" id="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
     </div>
 </nav>
