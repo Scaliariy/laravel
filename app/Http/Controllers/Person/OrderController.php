@@ -22,6 +22,8 @@ class OrderController extends Controller
             return redirect()->route('person.orders.index');
         }
 
-        return view('auth.orders.show', compact('order'));
+        $skus = $order->skus()->withTrashed()->get();
+
+        return view('auth.orders.show', compact('order', 'skus'));
     }
 }

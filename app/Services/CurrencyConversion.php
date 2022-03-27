@@ -68,7 +68,7 @@ class CurrencyConversion
 
         $targetCurrency = self::$container[$targetCurrencyCode];
 
-//TODO возможны проблемы
+        //TODO: возможны проблемы
 
         if ($originCurrency->code != self::DEFAULT_CURRENCY_CODE) {
             if ($targetCurrency->rate == 0 || $targetCurrency->updated_at->startOfDay() != Carbon::now()->startOfDay()) {
@@ -77,6 +77,7 @@ class CurrencyConversion
                 $targetCurrency = self::$container[$targetCurrencyCode];
             }
         }
+//        dd($sum , $originCurrency->rate , $targetCurrency->rate, $sum / $originCurrency->rate * $targetCurrency->rate);
         return $sum / $originCurrency->rate * $targetCurrency->rate;
     }
 

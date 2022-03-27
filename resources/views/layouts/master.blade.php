@@ -29,9 +29,9 @@
                 <li><a href="{{ route('reset') }}">@lang('main.reset_project')</a></li>
                 <li><a href="{{ route('locale', __('main.set_lang')) }}">
                         @if(Lang::locale() == 'ru')
-                            <img src="/img/uk.png" alt="EN" style="width:50%;height:50%;">
+                            EN{{--                            <img src="/img/uk.png" alt="EN" style="width:50%;height:50%;">--}}
                         @else
-                            <img src="/img/ru.png" alt="RU" style="width:50%;height:50%;">
+                            RU{{--                            <img src="/img/ru.png" alt="RU" style="width:50%;height:50%;">--}}
                         @endif
                         {{--                        @lang('main.set_lang')--}}
                     </a></li>
@@ -93,9 +93,10 @@
             </div>
             <div class="col-lg-6"><p>Самые популярные товары</p>
                 <ul>
-                    @foreach ($bestProducts as $bestProduct)
+                    @foreach ($bestSkus as $bestSku)
                         <li>
-                            <a href="{{ route('product', [$bestProduct->category->code, $bestProduct->code]) }}">{{ $bestProduct->name }}</a>
+                            <a href="{{ route('sku', [$bestSku->product->category->code, $bestSku->product->code, $bestSku]) }}">
+                                {{ $bestSku->product->__('name') }}</a>
                         </li>
                     @endforeach
                 </ul>
