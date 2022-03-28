@@ -1,6 +1,6 @@
-<p>@lang('mail.order_created.dear') {{ $name }}</p>
+<p>@lang('mail/order_created.dear') {{ $name }}</p>
 
-<p>@lang('mail.order_created.your_order') {{ $fullSum }} @lang('mail.order_created.created')</p>
+<p>@lang('mail/order_created.your_order') {{ $fullSum }} @lang('mail/order_created.created')</p>
 
 <table>
     <tbody>
@@ -8,7 +8,7 @@
         <tr>
             <td>
                 <a href="{{ route('sku', [$sku->product->category->code, $sku->product->code, $sku]) }}">
-                    <img height="56px" src="{{ Storage::url($sku->product->image) }}">
+                    <img height="20%" width="20%" src="{{ Storage::url($sku->product->image) }}">
                     {{ $sku->product->__('name') }}
                 </a>
             </td>

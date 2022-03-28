@@ -33,11 +33,11 @@ Auth::routes([
 Route::get('locale/{locale}', [MainController::class, 'changeLocale'])->name('locale');
 Route::get('currency/{currencyCode}', [MainController::class, 'changeCurrency'])->name('currency');
 
-Route::get('reset', [ResetController::class, 'reset'])->name('reset');
-
 Route::get('/logout', [LoginController::class, 'logout'])->name('get-logout');
 
 Route::middleware(['set_locale'])->group(function () {
+
+    Route::get('reset', [ResetController::class, 'reset'])->name('reset');
 
     Route::middleware([Authenticate::class])->group(function () {
         Route::group([

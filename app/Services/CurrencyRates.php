@@ -22,7 +22,6 @@ class CurrencyRates
         }
 
         $rates = $response->json('rates');
-
         foreach (CurrencyConversion::getCurrencies() as $currency) {
             if (!$currency->isMain()) {
                 if (!isset($rates[$currency->code])) {

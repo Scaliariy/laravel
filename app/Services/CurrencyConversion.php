@@ -50,15 +50,11 @@ class CurrencyConversion
         self::loadContainer();
 
         $originCurrency = self::$container[$originCurrencyCode];
-
         if ($originCurrency->code != self::DEFAULT_CURRENCY_CODE) {
             if ($originCurrency->rate != 0 || $originCurrency->updated_at->startOfDay() != Carbon::now()->startOfDay()) {
-
                 CurrencyRates::getRates();
                 self::loadContainer();
                 $originCurrency = self::$container[$originCurrencyCode];
-
-
             }
         }
 
@@ -70,14 +66,13 @@ class CurrencyConversion
 
         //TODO: возможны проблемы
 
-        if ($originCurrency->code != self::DEFAULT_CURRENCY_CODE) {
+        if ($targetCurrency->code != self::DEFAULT_CURRENCY_CODE) {
             if ($targetCurrency->rate == 0 || $targetCurrency->updated_at->startOfDay() != Carbon::now()->startOfDay()) {
                 CurrencyRates::getRates();
                 self::loadContainer();
                 $targetCurrency = self::$container[$targetCurrencyCode];
             }
         }
-//        dd($sum , $originCurrency->rate , $targetCurrency->rate, $sum / $originCurrency->rate * $targetCurrency->rate);
         return $sum / $originCurrency->rate * $targetCurrency->rate;
     }
 

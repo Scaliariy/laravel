@@ -17,7 +17,8 @@ class MainController extends Controller
     public function index(ProductsFilterRequest $request)
     {
         $skusQuery = Sku::with(['product', 'product.category']);
-
+//        $productsQuery = Product::with('category');
+//        dd($productsQuery->get());
         if ($request->filled('price_from')) {
             $skusQuery->where('price', '>=', $request->price_from);
         }
@@ -37,13 +38,13 @@ class MainController extends Controller
         if ($request->filled('search')) {
             $skusQuery->join('products', 'products.id', '=', 'skus.product_id')->where('products.name', 'like',
                 '%' . $request->search . '%');
+
+            if ($skusQuery->get()->isEmpty()) {
+                session()->now('warning', 'По вашему запросу ничего не найдено');
+            }
         }
 
         $skus = $skusQuery->paginate(6)->withPath("?" . $request->getQueryString());
-
-        if ($skus->total() == 0) {
-            session()->now('warning', 'По вашему запросу ничего не найдено');
-        }
 
         return view('index', compact('skus'));
     }
