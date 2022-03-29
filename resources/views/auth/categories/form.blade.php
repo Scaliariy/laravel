@@ -1,4 +1,5 @@
-@extends('auth.layouts.master')
+{{--@extends('auth.layouts.master')--}}
+@extends('auth.layouts.sidebar')
 
 @isset($category)
     @section('title', 'Редактировать категорию ' . $category->name)

@@ -1,4 +1,5 @@
-@extends('auth.layouts.master')
+{{--@extends('auth.layouts.master')--}}
+@extends('auth.layouts.sidebar')
 
 @isset($product)
     @section('title', 'Редактировать товар ' . $product->name)

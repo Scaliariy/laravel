@@ -1,4 +1,5 @@
-@extends('auth.layouts.master')
+{{--@extends('auth.layouts.master')--}}
+@extends('auth.layouts.sidebar')
 
 @isset($sku)
     @section('title', 'Редактировать Sku ' . $sku->name)

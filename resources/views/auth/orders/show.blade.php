@@ -1,4 +1,5 @@
-@extends('auth.layouts.master')
+{{--@extends('auth.layouts.master')--}}
+@extends('auth.layouts.sidebar')
 
 @section('title', 'Заказ ' . $order->id)
 

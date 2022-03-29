@@ -32,6 +32,10 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo Route::currentRouteNamed($route) ? 'class=\"active\"' : '' ?>";
         });
 
+        Blade::directive('activeadminpanel', function ($route) {
+            return "<?php echo Route::currentRouteNamed($route) ? ' active ' : '' ?>";
+        });
+
         Blade::if('admin', function () {
             return Auth::check() && Auth::user()->isAdmin();
         });

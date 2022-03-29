@@ -1,4 +1,5 @@
-@extends('auth.layouts.master')
+{{--@extends('auth.layouts.master')--}}
+@extends('auth.layouts.sidebar')
 
 @isset($propertyOption)
     @section('title', 'Редактировать вариант свойства ' . $propertyOption->name)

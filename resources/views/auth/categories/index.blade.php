@@ -1,4 +1,5 @@
-@extends('auth.layouts.master')
+{{--@extends('auth.layouts.master')--}}
+@extends('auth.layouts.sidebar')
 
 @section('title', 'Категории')
 
@@ -27,7 +28,7 @@
                     <td>{{ $category->code }}</td>
                     <td>{{ $category->name }}</td>
                     <td>
-                        <div class="btn-group" role="group">
+                        <div class="btn-group" role="group" style="">
                             <form action="{{ route('categories.destroy', $category) }}" method="POST">
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('categories.show', $category) }}">Открыть</a>
