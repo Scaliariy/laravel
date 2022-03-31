@@ -38,7 +38,7 @@
 
 <main>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" aria-label="Eighth navbar example">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}">@lang('main.online_shop')</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -60,7 +60,7 @@
                         <a class="nav-link @activeadminpanel('basket')"
                            href="{{ route('basket') }}">@lang('main.cart')</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown me-2">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-bs-toggle="dropdown"
                            aria-expanded="false">{{ $currencySymbol }}</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown07">
@@ -70,7 +70,7 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item me-2">
                         <a class="nav-link @activeadminpanel('basket')"
                            href="{{ route('locale', __('main.set_lang')) }}">@if(Lang::locale() == 'ru')
                                 EN
@@ -79,15 +79,34 @@
                             @endif</a>
                     </li>
                 </ul>
-                <form>
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+{{--                <form>--}}
+{{--                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search" id="search">--}}
+{{--                    @csrf--}}
+{{--                </form>--}}
+                <form class="d-flex me-2">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+                    <button class="btn btn-outline-success" type="submit">Поиск</button>
                     @csrf
                 </form>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navbar-right">
+                    @guest
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('main.login')</a></li>
+                    @endguest
+
+                    @auth
+                        @admin
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">@lang('main.admin_panel')</a></li>
+                    @else
+                        <li class="nav-item"><a class="nav-link" href="{{ route('person.orders.index') }}">@lang('main.my_orders')</a></li>
+                        @endadmin
+                        <li class="nav-item"><a class="nav-link" href="{{ route('get-logout') }}">@lang('main.logout')</a></li>
+                    @endauth
+                </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container"">
         <div class="starter-template">
             @if(session()->has('success'))
                 <p class="alert alert-success">{{ session()->get('success') }}</p>
@@ -100,9 +119,27 @@
     </div>
 </main>
 
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3">
     <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <div class="row">
+            <div class="col-lg-6"><p>Категории товаров</p>
+                <ul>
+                    @foreach($categories as $category)
+                        <li><a href="{{ route('category', $category->code) }}">{{ $category->__('name') }}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="col-lg-6"><p>Самые популярные товары</p>
+                <ul>
+                    @foreach ($bestSkus as $bestSku)
+                        <li>
+                            <a href="{{ route('sku', [$bestSku->product->category->code, $bestSku->product->code, $bestSku]) }}">
+                                {{ $bestSku->product->__('name') }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     </div>
 </footer>
 

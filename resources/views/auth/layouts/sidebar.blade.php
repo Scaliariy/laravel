@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
     <title>Админка: @yield('title')</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sidebars/">
@@ -101,8 +103,7 @@
     </svg>
 </svg>
 
-<div class="position-fixed">
-
+<div class="position-fixed" style="padding: 10px">
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-white" style="width: 300px;" >
         <a href="{{ route('index') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#home"/></svg>
@@ -194,10 +195,8 @@
     {{--    <div class="b-example-divider"></div>--}}
 </div>
 
-<div style="padding-left: 30px; padding-top: 15px; padding-bottom: 100px; height: 100%">
-    <div class="container-md bg-white" style="margin-left: 300px;">
-        @yield('content')
-    </div>
+<div class="container-md bg-white" style="margin-left: 330px; padding-top: 20px;">
+    @yield('content')
 </div>
 
 
