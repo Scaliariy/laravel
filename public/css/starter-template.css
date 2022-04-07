@@ -1,4 +1,5 @@
 body {
+    height: 100vh;
     padding-top: 40px;
 }
 
@@ -46,9 +47,28 @@ div.filters {
     padding-bottom: 5px;
 }
 
+body{
+    display:flex;
+    flex-direction:column;
+}
+
 footer {
     padding-top: 50px;
     padding-bottom: 50px;
     color: #99979c;
     background-color: #2a2730;
 }
+/*body{ height:100vh; margin:0; }*/
+
+/*header{ min-height:50px; background:lightcyan; }*/
+/*footer{ min-height:50px; background:PapayaWhip; }*/
+
+/*!* Trick *!*/
+/*body{*/
+/*    display:flex;*/
+/*    flex-direction:column;*/
+/*}*/
+
+/*footer{*/
+/*    margin-top:auto;*/
+/*}*/

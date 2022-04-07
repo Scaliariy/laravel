@@ -24,7 +24,10 @@ class Sku extends Model
 
     public function isAvailable()
     {
-        return !$this->product->trashed() && $this->count > 0;
+        if (!is_null($this->product)){
+            return !$this->product->trashed() && $this->count > 0;
+        }
+        return false;
     }
 
     public function getPriceForCount()

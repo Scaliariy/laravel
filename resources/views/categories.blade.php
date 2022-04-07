@@ -1,5 +1,5 @@
-{{--@extends('layouts.master')--}}
-@extends('layouts.navbar')
+{{--@extends('layouts.navbar')--}}
+@extends('layouts.master')
 
 @section('title', __('main.all_categories'))
 
@@ -7,7 +7,7 @@
     @foreach($categories as $category)
         <div class="panel">
             <a href="{{ route('category', $category->code) }}">
-                <img src="{{ Storage::url($category->image) }}">
+                <img style="max-height: 300px" src="{{ Storage::url($category->image) }}">
                 <h2>{{ $category->__('name') }}</h2>
             </a>
             <p>

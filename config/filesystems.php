@@ -32,7 +32,7 @@ return [
 
         'reset' => [
             'driver' => 'local',
-            'root' => base_path('resources/images'),
+            'root' => base_path('resources'),
         ],
 
         'local' => [

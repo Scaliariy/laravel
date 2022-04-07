@@ -1,5 +1,5 @@
-{{--@extends('layouts.master')--}}
-@extends('layouts.navbar')
+{{--@extends('layouts.navbar')--}}
+@extends('layouts.master')
 
 @section('title', __('main.category') . $category->__('name'))
 

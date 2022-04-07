@@ -88,15 +88,15 @@ class ContentSeeder extends Seeder
                 'code' => 'mobiles',
                 'description' => 'В этом разделе вы найдёте самые популярные мобильные телефонамы по отличным ценам!',
                 'description_en' => 'Mobile phones section with best prices for best popular phones!',
-                'image' => 'categories/mobile.jpg',
+                'image' => 'images/categories/mobile.jpg',
                 'products' => [
                     [
                         'name' => 'iPhone X',
                         'name_en' => 'iPhone X',
                         'code' => 'iphone_x',
-                        'description' => 'Отличный продвинутый телефон',
+                        'description' => 'instructions/text.html',
                         'description_en' => 'The best phone',
-                        'image' => 'products/iphone_x.jpg',
+                        'image' => 'images/products/iphone_x.jpg',
                         'properties' => [
                             1,
                             2,
@@ -142,7 +142,7 @@ class ContentSeeder extends Seeder
                         'code' => 'iphone_xl',
                         'description' => 'Огромный продвинутый телефон',
                         'description_en' => 'The best huge phone',
-                        'image' => 'products/iphone_x_silver.jpg',
+                        'image' => 'images/products/iphone_x_silver.jpg',
                         'properties' => [
                             1,
                             2,
@@ -188,7 +188,7 @@ class ContentSeeder extends Seeder
                         'code' => 'htc_one_s',
                         'description' => 'Зачем платить за лишнее? Легендарный HTC One S',
                         'description_en' => 'Why do you need to pay more? Legendary HTC One S',
-                        'image' => 'products/htc_one_s.png',
+                        'image' => 'images/products/htc_one_s.png',
                         'properties' => [
                             1,
                             2,
@@ -210,7 +210,7 @@ class ContentSeeder extends Seeder
                         'code' => 'iphone_5se',
                         'description' => 'Отличный классический iPhone',
                         'description_en' => 'The best classic iPhone',
-                        'image' => 'products/iphone_5.jpg',
+                        'image' => 'images/products/iphone_5.jpg',
                         'properties' => [
                             1,
                             2,
@@ -248,7 +248,7 @@ class ContentSeeder extends Seeder
                         'code' => 'samsung_j6',
                         'description' => 'Современный телефон начального уровня',
                         'description_en' => 'Modern phone of basic level',
-                        'image' => 'products/samsung_j6.jpg',
+                        'image' => 'images/products/samsung_j6.jpg',
                         'properties' => [
                             1,
                             2,
@@ -268,7 +268,7 @@ class ContentSeeder extends Seeder
                 'code' => 'portable',
                 'description' => 'Раздел с портативной техникой.',
                 'description_en' => 'Section with portables.',
-                'image' => 'categories/portable.jpg',
+                'image' => 'images/categories/portable.jpg',
                 'products' => [
                     [
                         'name' => 'Наушники Beats Audio',
@@ -276,7 +276,7 @@ class ContentSeeder extends Seeder
                         'code' => 'beats_audio',
                         'description' => 'Отличный звук от Dr. Dre',
                         'description_en' => 'Great sound from Dr. Dre',
-                        'image' => 'products/beats.jpg',
+                        'image' => 'images/products/beats.jpg',
                         'properties' => [
                             1,
                         ],
@@ -298,7 +298,7 @@ class ContentSeeder extends Seeder
                         'code' => 'gopro',
                         'description' => 'Снимай самые яркие моменты с помощью этой камеры',
                         'description_en' => 'Capture the best moments of your life with that camera',
-                        'image' => 'products/gopro.jpg',
+                        'image' => 'images/products/gopro.jpg',
                     ],
                     [
                         'name' => 'Камера Panasonic HC-V770',
@@ -306,7 +306,7 @@ class ContentSeeder extends Seeder
                         'code' => 'panasonic_hc-v770',
                         'description' => 'Для серьёзной видео съемки нужна серьёзная камера. Panasonic HC-V770 для этих целей лучший выбор!',
                         'description_en' => 'For serious video you need the profession camera. Panasonic HC-V770 is that you need!',
-                        'image' => 'products/video_panasonic.jpg',
+                        'image' => 'images/products/video_panasonic.jpg',
                     ],
                 ],
             ],
@@ -316,7 +316,7 @@ class ContentSeeder extends Seeder
                 'code' => 'appliances',
                 'description' => 'Раздел с бытовой техникой',
                 'description_en' => 'Section with appliance',
-                'image' => 'categories/appliance.jpg',
+                'image' => 'images/categories/appliance.jpg',
                 'products' => [
                     [
                         'name' => 'Кофемашина DeLongi',
@@ -324,7 +324,7 @@ class ContentSeeder extends Seeder
                         'code' => 'delongi',
                         'description' => 'Хорошее утро начинается с хорошего кофе!',
                         'description_en' => 'Good morning starts with a good coffee!',
-                        'image' => 'products/delongi.jpg',
+                        'image' => 'images/products/delongi.jpg',
                         'properties' => [
                             1,
                         ],
@@ -346,7 +346,7 @@ class ContentSeeder extends Seeder
                         'code' => 'haier',
                         'description' => 'Для большой семьи большой холодильник!',
                         'description_en' => 'The huge refrigerator for a big family!',
-                        'image' => 'products/haier.jpg',
+                        'image' => 'images/products/haier.jpg',
                         'properties' => [
                             1,
                         ],
@@ -368,7 +368,7 @@ class ContentSeeder extends Seeder
                         'code' => 'moulinex',
                         'description' => 'Для самых смелых идей',
                         'description_en' => 'For best ideas',
-                        'image' => 'products/moulinex.jpg',
+                        'image' => 'images/products/moulinex.jpg',
 
                     ],
                     [
@@ -377,7 +377,7 @@ class ContentSeeder extends Seeder
                         'code' => 'bosch',
                         'description' => 'Любите домашние котлеты? Вам определенно стоит посмотреть на эту мясорубку!',
                         'description_en' => 'Do you like home cutlets? You need to see that combine!',
-                        'image' => 'products/bosch.jpg',
+                        'image' => 'images/products/bosch.jpg',
                     ],
                 ],
             ]

@@ -49,9 +49,14 @@ class ProductController extends Controller
     {
         $params = $request->all();
         unset($params['image']);
+        unset($params['instruction']);
         if ($request->has('image')) {
-            $path = $request->file('image')->store('products');
+            $path = $request->file('image')->store('images/products');
             $params['image'] = $path;
+        }
+        if ($request->has('instruction')) {
+            $path = $request->file('instruction')->store('instructions');
+            $params['instruction'] = $path;
         }
 
         Product::create($params);
@@ -91,12 +96,18 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product)
     {
+//        dd($product, $request->all());
         $params = $request->all();
-        unset($params['image']);
+        unset($params['image'], $params['instruction']);
         if ($request->has('image')) {
             Storage::delete($product->image);
-            $path = $request->file('image')->store('products');
+            $path = $request->file('image')->store('images/products');
             $params['image'] = $path;
+        }
+        if ($request->has('instruction')) {
+            Storage::delete($product->instruction);
+            $path = $request->file('instruction')->store('instructions');
+            $params['instruction'] = $path;
         }
 
         foreach (['new', 'hit', 'recommend'] as $fieldName) {

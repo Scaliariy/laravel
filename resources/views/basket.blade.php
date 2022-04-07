@@ -1,5 +1,5 @@
-{{--@extends('layouts.master')--}}
-@extends('layouts.navbar')
+{{--@extends('layouts.navbar')--}}
+@extends('layouts.master')
 
 @section('title', __('basket.cart'))
 
@@ -25,17 +25,28 @@
                             {{ $sku->product->__('name') }}
                         </a>
                     </td>
-                    <td><span class="badge">{{ $sku->countInOrder }}</span>
-                        <div class="btn-group form-inline">
+                    <td>
+                        <span class="badge bg-secondary">{{ $sku->countInOrder }}</span>
+                        <div class="btn-group">
                             <form action="{{ route('basket-remove', $sku) }}" method="POST">
-                                <button type="submit" class="btn btn-danger" href=""><span
-                                        class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+                                <button type="submit" class="btn btn-danger">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                         class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
+                                    </svg>
+                                </button>
                                 @csrf
                             </form>
                             <form action="{{ route('basket-add', $sku) }}" method="POST">
                                 <button type="submit" class="btn btn-success"
-                                        href=""><span
-                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                                        href="">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                         class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                                    </svg>
+                                </button>
                                 @csrf
                             </form>
                         </div>
