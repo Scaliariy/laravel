@@ -40,7 +40,7 @@
                    class="btn btn-default"
                    role="button">@lang('main.more')</a>
                     @else
-                        <button type="submit" class="btn btn-primary disabled" role="button">@lang('main.more')</button>
+                        <button type="submit" class="btn btn-primary" disabled role="button">@lang('main.more')</button>
                     @endif
                 @csrf
             </form>

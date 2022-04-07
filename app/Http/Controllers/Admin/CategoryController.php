@@ -49,6 +49,9 @@ class CategoryController extends Controller
         if ($request->has('image')) {
             $path = $request->file('image')->store('images/categories');
             $params['image'] = $path;
+        } else {
+            $path = 'images/image-not-found.png';
+            $params['image'] = $path;
         }
 
         Category::create($params);
