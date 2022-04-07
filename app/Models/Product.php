@@ -20,7 +20,6 @@ class Product extends Model
         'price',
         'category_id',
         'description',
-        'image',
         'instruction',
         'hit',
         'new',

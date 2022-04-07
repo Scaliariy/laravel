@@ -10,7 +10,7 @@ class Sku extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['product_id', 'count', 'price'];
+    protected $fillable = ['product_id', 'count', 'price', 'image'];
 
     public function product()
     {

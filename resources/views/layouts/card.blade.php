@@ -16,7 +16,7 @@
             @endif
         </div>
         @if(!is_null($sku->product))
-        <img src="{{ Storage::url($sku->product->image) }}" alt="{{ $sku->product->__('name') }}">
+        <img src="{{ Storage::url($sku->image) }}" alt="{{ $sku->product->__('name') }}">
         @endif
         <div class="caption">
             @if(!is_null($sku->product))

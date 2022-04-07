@@ -9,7 +9,7 @@
             <div class="col">
 
                 <h2 class="p-3">{{ $sku->product->category->name }} / {{ $sku->product->__('name') }}</h2>
-                <img src="{{ Storage::url($sku->product->image) }}" style="max-height: 300px;">
+                <img src="{{ Storage::url($sku->image) }}" style="max-height: 300px;">
 
                 <div class="container p-3">
                     <div class="row">

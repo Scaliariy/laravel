@@ -48,15 +48,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $params = $request->all();
-        unset($params['image']);
         unset($params['instruction']);
-        if ($request->has('image')) {
-            $path = $request->file('image')->store('images/products');
-            $params['image'] = $path;
-        } else {
-            $path = 'images/image-not-found.png';
-            $params['image'] = $path;
-        }
         if ($request->has('instruction')) {
             $path = $request->file('instruction')->store('instructions');
             $params['instruction'] = $path;
@@ -100,12 +92,7 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $params = $request->all();
-        unset($params['image'], $params['instruction']);
-        if ($request->has('image')) {
-            Storage::delete($product->image);
-            $path = $request->file('image')->store('images/products');
-            $params['image'] = $path;
-        }
+        unset($params['instruction']);
         if ($request->has('instruction')) {
             Storage::delete($product->instruction);
             $path = $request->file('instruction')->store('instructions');

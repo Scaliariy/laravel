@@ -41,10 +41,6 @@
                 <td>{{ $product->description_en }}</td>
             </tr>
             <tr>
-                <td>Картинка</td>
-                <td><img src="{{\Illuminate\Support\Facades\Storage::url($product->image)}}" height="240px"></td>
-            </tr>
-            <tr>
                 <td>Категория</td>
                 <td>{{ $product->category->name }}</td>
             </tr>

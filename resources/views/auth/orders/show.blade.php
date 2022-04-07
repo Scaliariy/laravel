@@ -26,7 +26,7 @@
                                 <td>
                                     <a href="{{route('sku', [$sku->product->category->code, $sku->product->code, $sku])}}">
                                         <img height="56px"
-                                             src="{{ Storage::url($sku->product->image) }}">
+                                             src="{{ Storage::url($sku->image) }}">
                                         {{ $sku->product->name }}
                                     </a>
                                 </td>

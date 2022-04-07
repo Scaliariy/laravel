@@ -91,19 +91,8 @@
                 <br>
                 <div class="input-group row">
                     <label for="instruction" class="col-sm-2 col-form-label">Інструкція: </label>
-                    <div class="col-sm-10">
-                        <label class="btn btn-default btn-file">
-                            Завантажити <input type="file" style="display: none;" name="instruction" id="instruction">
-                        </label>
-                    </div>
-                </div>
-                <br>
-                <div class="input-group row">
-                    <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
-                    <div class="col-sm-10">
-                        <label class="btn btn-default btn-file">
-                            Загрузить <input type="file" style="display: none;" name="image" id="image">
-                        </label>
+                    <div class="col-sm-6">
+                        <input class="form-control" type="file" name="instruction" id="instruction">
                     </div>
                 </div>
                 <br>
@@ -144,6 +133,7 @@
                     <br>
                 @endforeach
                 <button class="btn btn-success">Сохранить</button>
+                <br><br>
             </div>
         </form>
     </div>

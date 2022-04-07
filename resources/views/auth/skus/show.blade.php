@@ -29,6 +29,10 @@
                 <td>Количество</td>
                 <td>{{ $sku->count }}</td>
             </tr>
+            <tr>
+                <td>Картинка</td>
+                <td><img src="{{\Illuminate\Support\Facades\Storage::url($sku->image)}}" height="240px"></td>
+            </tr>
             </tbody>
         </table>
     </div>
