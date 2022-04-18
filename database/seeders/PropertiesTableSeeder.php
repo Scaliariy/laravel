@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class PropertiesTableSeeder extends Seeder
@@ -18,26 +19,21 @@ class PropertiesTableSeeder extends Seeder
 
         \DB::table('properties')->delete();
 
-        \DB::table('properties')->insert(array (
+        $properties = array (
             0 =>
-            array (
-                'created_at' => '2022-03-30 20:11:42',
-                'deleted_at' => NULL,
-                'id' => 1,
-                'name' => 'Цвет',
-                'name_en' => 'Color',
-                'updated_at' => '2022-03-30 20:11:42',
-            ),
-            1 =>
-            array (
-                'created_at' => '2022-03-30 20:11:42',
-                'deleted_at' => NULL,
-                'id' => 2,
-                'name' => 'Внутренняя память',
-                'name_en' => 'Memory',
-                'updated_at' => '2022-03-30 20:11:42',
-            ),
-        ));
+                array (
+                    'id' => 7,
+                    'name' => 'Рецепт',
+                    'name_en' => 'Prescription',
+                ),
+        );
+
+        for ($i = 0; $i < count($properties); $i++) {
+            $properties[$i]['created_at'] = Carbon::now();
+            $properties[$i]['updated_at'] = Carbon::now();
+        }
+
+        \DB::table('properties')->insert($properties);
 
 
     }

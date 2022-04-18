@@ -23,7 +23,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate(7);
         return view('auth.products.index', compact('products'));
     }
 
@@ -98,6 +98,13 @@ class ProductController extends Controller
             $path = $request->file('instruction')->store('instructions');
             $params['instruction'] = $path;
         }
+
+//        if ($request->has('delete_properties')) {
+////            dd($product->properties()->detach());
+////            dd($request->all());
+//            unset($request['property_id']);
+//            $product->properties()->detach();
+//        }
 
         foreach (['new', 'hit', 'recommend'] as $fieldName) {
             if (!isset($params[$fieldName])) {

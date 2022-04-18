@@ -67,14 +67,14 @@
                         </div>
                     </div>
                     <br>
-
+                    @endforeach
                     <div class="input-group row">
                         <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                         <div class="col-sm-6">
                             <input class="form-control" type="file" name="image" id="image">
                         </div>
                     </div>
-                @endforeach
+
                 <div class="col-sm-10">
                     <br>
                     <button class="btn btn-success">Сохранить</button>

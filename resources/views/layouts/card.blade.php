@@ -1,5 +1,5 @@
 <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
+    <div class="thumbnail"  style="height: 380px">
         <div class="labels">
             @if(!is_null($sku->product))
                 @if($sku->product->isNew())
@@ -16,15 +16,17 @@
             @endif
         </div>
         @if(!is_null($sku->product))
-        <img src="{{ Storage::url($sku->image) }}" alt="{{ $sku->product->__('name') }}">
+            <img src="{{ Storage::url($sku->image) }}" alt="{{ $sku->product->__('name') }}">
         @endif
         <div class="caption">
             @if(!is_null($sku->product))
-            <h3>{{ $sku->product->__('name') }}</h3>
+                <h3>{{ $sku->product->__('name') }}</h3>
             @endif
             @isset($sku->product->properties)
                 @foreach($sku->propertyOptions as $propertyOption)
-                    <h4>{{$propertyOption->property->__('name')}}: {{$propertyOption->__('name')}}</h4>
+                    @if(!is_null($propertyOption->property))
+                        <h4>{{$propertyOption->property->__('name')}}: {{$propertyOption->__('name')}}</h4>
+                    @endif
                 @endforeach
             @endisset
             <p>{{ $sku->price}} {{ $currencySymbol }}</p>
@@ -35,13 +37,13 @@
                 @else
                     @lang('main.not_available')
                 @endif
-                    @if(!is_null($sku->product))
-                <a href="{{ route('sku', [isset($category) ? $category->code : $sku->product->category->code, $sku->product->code, $sku->id]) }}"
-                   class="btn btn-default"
-                   role="button">@lang('main.more')</a>
-                    @else
-                        <button type="submit" class="btn btn-primary" disabled role="button">@lang('main.more')</button>
-                    @endif
+                @if(!is_null($sku->product))
+                    <a href="{{ route('sku', [isset($category) ? $category->code : $sku->product->category->code, $sku->product->code, $sku->id]) }}"
+                       class="btn btn-default"
+                       role="button">@lang('main.more')</a>
+                @else
+                    <button type="submit" class="btn btn-primary" disabled role="button">@lang('main.more')</button>
+                @endif
                 @csrf
             </form>
             </p>

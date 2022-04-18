@@ -114,6 +114,14 @@
                     </div>
                 </div>
                 <br>
+{{--                    <div class="form-group row">--}}
+{{--                        <label for="code" class="col-sm-2 col-form-label">Видалити властивості</label>--}}
+{{--                        <div class="col-sm-10">--}}
+{{--                            <input type="checkbox" class="form-check-label big-checkbox" name="delete_properties"--}}
+{{--                                   id="delete_properties">--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                <br>--}}
                 @foreach([
                     'hit' => 'Хит',
                     'new' => 'Новинка',

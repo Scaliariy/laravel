@@ -55,10 +55,8 @@ class SkuController extends Controller
             Storage::delete($sku->image);
             $path = $request->file('image')->store('images/products');
             $params['image'] = $path;
-        } else {
-            $path = 'images/image-not-found.png';
-            $params['image'] = $path;
         }
+
         $params['product_id'] = $request->product->id;
         $sku->update($params);
         $sku->propertyOptions()->sync($request->property_id);

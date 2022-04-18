@@ -69,7 +69,7 @@
                         src="{{ Storage::url($sku->product->instruction) }}"></iframe>
                 @else
                     <iframe style="width: 100%; height: 80vh; border: 1px solid #D1D1D1;"
-                            src="{{ Storage::url('instructions/R6egiuZ72gyDT4FtVHTIDmb8aB9JrxPrhnnVECIp.html') }}"></iframe>
+                            src="{{ Storage::url('instructions/not_found_instruction.html') }}"></iframe>
                 @endif
             </div>
         </div>

@@ -94,7 +94,7 @@ class ContentSeeder extends Seeder
                         'name' => 'iPhone X',
                         'name_en' => 'iPhone X',
                         'code' => 'iphone_x',
-                        'description' => 'instructions/text.html',
+                        'description' => 'instructions/folieva-kyslota-tabletky-1-mh.html',
                         'description_en' => 'The best phone',
                         'image' => 'images/products/iphone_x.jpg',
                         'properties' => [
