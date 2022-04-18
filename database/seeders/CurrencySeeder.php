@@ -19,8 +19,8 @@ class CurrencySeeder extends Seeder
 
         DB::table('currencies')->insert([
             [
-                'code' => 'RUB',
-                'symbol' => '₽',
+                'code' => 'UAH',
+                'symbol' => '₴',
                 'is_main' => 1,
                 'rate' => 1,
                 'updated_at' => Carbon::now(),

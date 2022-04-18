@@ -23,7 +23,7 @@
             </tr>
             <tr>
                 <td>Цена</td>
-                <td>{{ $sku->price }}</td>
+                <td>{{ $sku->price }} {{ $currencySymbol }}</td>
             </tr>
             <tr>
                 <td>Количество</td>

@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class CurrencyConversion
 {
-    public const DEFAULT_CURRENCY_CODE = 'RUB';
+    public const DEFAULT_CURRENCY_CODE = 'UAH';
 
     protected static $container;
 
@@ -30,6 +30,8 @@ class CurrencyConversion
 
     public static function getCurrencyFromSession()
     {
+//        session()->forget('currency');
+//        dd(self::DEFAULT_CURRENCY_CODE, session('currency'));
         return session('currency', self::DEFAULT_CURRENCY_CODE);
     }
 
