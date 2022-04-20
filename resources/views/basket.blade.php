@@ -1,4 +1,3 @@
-{{--@extends('layouts.navbar')--}}
 @extends('layouts.master')
 
 @section('title', __('basket.cart'))

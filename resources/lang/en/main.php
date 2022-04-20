@@ -10,7 +10,7 @@ return [
     'cart' => 'Your cart',
     'reset_project' => 'Reset project',
     'current_lang' => 'en',
-    'set_lang' => 'ru',
+    'set_lang' => 'ua',
     'properties' => [
         'hit' => 'Hit',
         'recommend' => 'Recommend',
@@ -25,9 +25,10 @@ return [
     'my_orders' => 'My orders',
     'admin_panel' => 'Admin panel',
     'title' => 'Main',
-    'rub' => 'rub',
+    'uah' => 'uah',
     'add_to_basket' => 'Add to cart',
     'more' => 'More about',
     'not_available' => 'Not available',
     'project_reset' => 'The Project was reset',
+    'search' => 'Search',
 ];

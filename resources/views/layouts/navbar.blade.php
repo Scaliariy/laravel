@@ -79,10 +79,6 @@
                             @endif</a>
                     </li>
                 </ul>
-{{--                <form>--}}
-{{--                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search" id="search">--}}
-{{--                    @csrf--}}
-{{--                </form>--}}
                 <form class="d-flex me-2">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
                     <button class="btn btn-outline-success" type="submit">Поиск</button>

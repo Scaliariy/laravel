@@ -1,19 +1,18 @@
-{{--@extends('layouts.navbar')--}}
-@extends('layouts.master')
+{{--@extends('layouts.master')--}}
 
-@section('title', __('main.category') . $category->__('name'))
+{{--@section('title', __('main.category') . $category->__('name'))--}}
 
-@section('content')
-    <h1>
-        {{$category->__('name')}}
+{{--@section('content')--}}
+{{--    <h1>--}}
+{{--        {{$category->__('name')}}--}}
 {{--        {{ $category->products->count() }}--}}
-    </h1>
-    <p>
-        {{ $category->__('description') }}
-    </p>
-    <div class="row">
-        @foreach($category->products->map->skus->flatten() as $sku)
-            @include('layouts.card', compact('sku'))
-        @endforeach
-    </div>
-@endsection
+{{--    </h1>--}}
+{{--    <p>--}}
+{{--        {{ $category->__('description') }}--}}
+{{--    </p>--}}
+{{--    <div class="row">--}}
+{{--        @foreach($category->products->map->skus->flatten() as $sku)--}}
+{{--            @include('layouts.card', compact('sku'))--}}
+{{--        @endforeach--}}
+{{--    </div>--}}
+{{--@endsection--}}

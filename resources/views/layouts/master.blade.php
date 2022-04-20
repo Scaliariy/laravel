@@ -28,10 +28,10 @@
                 <li @routeactive('basket*')><a href="{{ route('basket') }}">@lang('main.cart')</a></li>
                 <li><a href="{{ route('reset') }}">@lang('main.reset_project')</a></li>
                 <li><a href="{{ route('locale', __('main.set_lang')) }}">
-                        @if(Lang::locale() == 'ru')
-                            EN{{--                            <img src="/img/uk.png" alt="EN" style="width:50%;height:50%;">--}}
+                        @if(Lang::locale() == 'ua')
+                            <img src="/img/us.png" alt="EN" style="width:20px;height:20px;">
                         @else
-                            RU{{--                            <img src="/img/ru.png" alt="RU" style="width:50%;height:50%;">--}}
+                            <img src="/img/ua.png" alt="RU" style="width:20px;height:20px;">
                         @endif
                         {{--                        @lang('main.set_lang')--}}
                     </a></li>
@@ -61,9 +61,9 @@
                 @endauth
             </ul>
             <form class="form-inline" method="GET" action="{{route("index")}}">
-                <input class="form-control " style="margin: 10px" type="search" placeholder="Search" aria-label="Search"
+                <input class="form-control " style="margin: 10px" type="search" aria-label="Search"
                        name="search" id="search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">@lang('main.search')</button>
             </form>
         </div>
     </div>

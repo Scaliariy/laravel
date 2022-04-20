@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Traits\Translatable;
 use App\Services\CurrencyConversion;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sku extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Translatable;
 
     protected $fillable = ['product_id', 'count', 'price', 'image'];
 

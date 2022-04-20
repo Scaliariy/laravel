@@ -25,7 +25,7 @@ class Subscription extends Model
 
     public static function sendEmailBySubscription(Sku $sku)
     {
-        $subscriptions = self::activeByProductId($sku->id)->get();
+        $subscriptions = self::activeBySkuId($sku->id)->get();
 
         foreach ($subscriptions as $subscription) {
             Mail::to($subscription->email)->send(new SendSubscriptionMessage($sku));

@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Product;
-use App\Observers\ProductObserver;
+use App\Models\Sku;
+use App\Observers\SkuObserver;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Schema;
@@ -44,6 +45,6 @@ class AppServiceProvider extends ServiceProvider
             return Auth::check() && !Auth::user()->isAdmin();
         });
 
-        Product::observe(ProductObserver::class);
+        Sku::observe(SkuObserver::class);
     }
 }

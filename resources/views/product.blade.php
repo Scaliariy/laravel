@@ -1,5 +1,4 @@
-@extends('layouts.navbar')
-{{--@extends('layouts.master')--}}
+@extends('layouts.master')
 
 @section('title', __('main.product'))
 
