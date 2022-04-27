@@ -1,18 +1,18 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($product)
-    @section('title', 'Редактировать товар ' . $product->name)
+    @section('title', 'Редагувати товар ' . $product->name)
 @else
-    @section('title', 'Создать товар')
+    @section('title', 'Створити товар')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($product)
-            <h1>Редактировать товар <b>{{ $product->name }}</b></h1>
+            <h1>Редагувати товар <b>{{ $product->name }}</b></h1>
         @else
-            <h1>Добавить товар</h1>
+            <h1>Додати товар</h1>
         @endisset
         <form method="POST" enctype="multipart/form-data"
               @isset($product)
@@ -36,7 +36,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'name'])
                         <input type="text" class="form-control" name="name" id="name"
@@ -45,7 +45,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название en: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва en: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'name_en'])
                         <input type="text" class="form-control" name="name_en" id="name_en"
@@ -54,7 +54,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Категория: </label>
+                    <label for="category_id" class="col-sm-2 col-form-label">Категорія: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'category_id'])
                         <select name="category_id" id="category_id" class="form-control">
@@ -72,7 +72,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Опис: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'description'])
                         <textarea name="description" id="description" cols="72"
@@ -81,7 +81,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание en: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Опис en: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'description_en'])
                         <textarea name="description_en" id="description_en" cols="72"
@@ -97,7 +97,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Свойство: </label>
+                    <label for="category_id" class="col-sm-2 col-form-label">Властивість: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'property_id'])
                         <select class="selectpicker" name="property_id[]" multiple>
@@ -140,7 +140,7 @@
                     </div>
                     <br>
                 @endforeach
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">Зберегти</button>
                 <br><br>
             </div>
         </form>

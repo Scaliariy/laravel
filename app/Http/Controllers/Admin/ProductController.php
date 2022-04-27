@@ -99,13 +99,6 @@ class ProductController extends Controller
             $params['instruction'] = $path;
         }
 
-//        if ($request->has('delete_properties')) {
-////            dd($product->properties()->detach());
-////            dd($request->all());
-//            unset($request['property_id']);
-//            $product->properties()->detach();
-//        }
-
         foreach (['new', 'hit', 'recommend'] as $fieldName) {
             if (!isset($params[$fieldName])) {
                 $params[$fieldName] = 0;

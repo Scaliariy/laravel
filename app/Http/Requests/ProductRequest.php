@@ -40,10 +40,10 @@ class ProductRequest extends FormRequest
     {
         return [
             'required' => 'Поле :attribute обязательно для ввода',
-            'min' => 'Поле :attribute должно иметь минимум :min символов',
-            'max' => 'Поле :attribute должно иметь максимум :max символов',
-            'code.min' => 'Поле код должно иметь минимум :min символов',
-            'price.min' => 'Поле :attribute должно иметь минимум значение :min',
+            'min' => 'Поле :attribute повинно мати мінімум :min символов',
+            'max' => 'Поле :attribute повинно мати максимум :max символов',
+            'code.min' => 'Поле код повинно мати мінімум :min символов',
+            'price.min' => 'Поле :attribute повинно мати мінімум значение :min',
             'unique' => 'Такой :attribute уже существует',
 
         ];

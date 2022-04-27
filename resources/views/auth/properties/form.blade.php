@@ -1,18 +1,18 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($property)
-    @section('title', 'Редактировать свойство ' . $property->name)
+    @section('title', 'Редагувати властивість ' . $property->name)
 @else
-    @section('title', 'Создать свойство')
+    @section('title', 'Створити властивість')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($property)
-            <h1>Редактировать Свойство <b>{{ $property->name }}</b></h1>
+            <h1>Редагувати Властивість <b>{{ $property->name }}</b></h1>
         @else
-            <h1>Добавить Свойство</h1>
+            <h1>Додати Властивість</h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"
@@ -29,7 +29,7 @@
                 @csrf
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва: </label>
                     <div class="col-sm-6">
                         @error('name')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -40,7 +40,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название en: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва en: </label>
                     <div class="col-sm-6">
                         @error('name_en')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <br>
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">Зберегти</button>
             </div>
         </form>
     </div>

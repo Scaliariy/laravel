@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\Admin\PropertyOptionController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\MainController;
@@ -55,13 +56,14 @@ Route::middleware(['set_locale'])->group(function () {
             Route::group(['middleware' => 'is_admin'], function () {
                 Route::get('/orders', [OrderController::class, 'index'])->name('home');
                 Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+                Route::resource('categories', CategoryController::class);
+                Route::resource('products', ProductController::class);
+                Route::resource('products/{product}/skus', SkuController::class);
+                Route::resource('properties', PropertyController::class);
+                Route::resource('properties/{property}/property-options', PropertyOptionController::class);
+                Route::resource('users', UserController::class);
+                Route::get('/users/{user}/orders', [UserController::class, 'orders'])->name('user_orders');
             });
-
-            Route::resource('categories', CategoryController::class);
-            Route::resource('products', ProductController::class);
-            Route::resource('products/{product}/skus', SkuController::class);
-            Route::resource('properties', PropertyController::class);
-            Route::resource('properties/{property}/property-options', PropertyOptionController::class);
         });
     });
 

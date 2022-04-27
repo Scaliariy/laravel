@@ -13,16 +13,16 @@
                     #
                 </th>
                 <th>
-                    Имя
+                    Ім'я
                 </th>
                 <th>
                     Телефон
                 </th>
                 <th>
-                    Когда отправлен
+                    Коли надісланий
                 </th>
                 <th>
-                    Сумма
+                    Сума
                 </th>
                 <th>
                     Дії
@@ -42,7 +42,7 @@
                                href="{{route('orders.show', $order)}}"
                                @else
                                href="{{route('person.orders.show', $order)}}"
-                               @endadmin
+                                @endadmin
                             >Открыть</a>
                         </div>
                     </td>

@@ -1,5 +1,5 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Вариант свойства ' . $propertyOption->name)
 
@@ -13,7 +13,7 @@
                     Поле
                 </th>
                 <th>
-                    Значение
+                    Значення
                 </th>
             </tr>
             <tr>
@@ -21,19 +21,19 @@
                 <td>{{ $propertyOption->id }}</td>
             </tr>
             <tr>
-                <td>Свойство</td>
+                <td>Властивість</td>
                 <td>{{ $propertyOption->property->name }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>Назва</td>
                 <td>{{ $propertyOption->name }}</td>
             </tr>
             <tr>
-                <td>Название en</td>
+                <td>Назва en</td>
                 <td>{{ $propertyOption->name_en }}</td>
             </tr>
             {{--            <tr>--}}
-            {{--                <td>Кол-во товаров</td>--}}
+            {{--                <td>Кількість товаров</td>--}}
             {{--                <td>{{ $propertyOption->products->count() }}</td>--}}
             {{--            </tr>--}}
             </tbody>

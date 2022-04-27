@@ -1,11 +1,11 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
-@section('title', 'Категория ' . $category->name)
+@section('title', 'Категорія ' . $category->name)
 
 @section('content')
     <div class="col-md-12">
-        <h1>Категория {{$category->name}}</h1>
+        <h1>Категорія {{$category->name}}</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -13,7 +13,7 @@
                     Поле
                 </th>
                 <th>
-                    Значение
+                    Значення
                 </th>
             </tr>
             <tr>
@@ -25,19 +25,19 @@
                 <td>{{ $category->code }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>Назва</td>
                 <td>{{ $category->name }}</td>
             </tr>
             <tr>
-                <td>Название en</td>
+                <td>Назва en</td>
                 <td>{{ $category->name_en }}</td>
             </tr>
             <tr>
-                <td>Описание</td>
+                <td>Опис</td>
                 <td>{{ $category->description }}</td>
             </tr>
             <tr>
-                <td>Описание en</td>
+                <td>Опис en</td>
                 <td>{{ $category->description_en }}</td>
             </tr>
             <tr>
@@ -46,7 +46,7 @@
                          height="240px"></td>
             </tr>
             <tr>
-                <td>Кол-во товаров</td>
+                <td>Кількість товаров</td>
                 <td>{{ $category->products->count() }}</td>
             </tr>
             </tbody>

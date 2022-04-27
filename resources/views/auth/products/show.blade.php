@@ -1,5 +1,5 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Продукт ' . $product->name)
 
@@ -13,7 +13,7 @@
                     Поле
                 </th>
                 <th>
-                    Значение
+                    Значення
                 </th>
             </tr>
             <tr>
@@ -25,27 +25,27 @@
                 <td>{{ $product->code }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>Назва</td>
                 <td>{{ $product->name }}</td>
             </tr>
             <tr>
-                <td>Название en</td>
+                <td>Назва en</td>
                 <td>{{ $product->__('name') }}</td>
             </tr>
             <tr>
-                <td>Описание</td>
+                <td>Опис</td>
                 <td>{{ $product->description }}</td>
             </tr>
             <tr>
-                <td>Описание en</td>
+                <td>Опис en</td>
                 <td>{{ $product->description_en }}</td>
             </tr>
             <tr>
-                <td>Категория</td>
+                <td>Категорія</td>
                 <td>{{ $product->category->name }}</td>
             </tr>
             <tr>
-                <td>Лейблы</td>
+                <td>Лейбли</td>
                 <td>
                     @if($product->isNew())
                         <span class="badge badge-success">Новинка</span>

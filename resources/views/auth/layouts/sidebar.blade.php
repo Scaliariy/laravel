@@ -121,7 +121,7 @@
             <li>
                 <a href="{{ route('home') }}" class="nav-link link-dark @activeadminpanel('home')">
                     <svg class="bi me-2" width="20" height="20"><use xlink:href="#table"/></svg>
-                    <span class="fs-5">Заказы</span>
+                    <span class="fs-5">Замовлення</span>
                 </a>
             </li>
             <li>
@@ -147,7 +147,7 @@
             <li>
                 <a href="{{ route('person.orders.index') }}" class="nav-link link-dark @activeadminpanel('person.orders.index')">
                     <svg class="bi me-2" width="20" height="20"><use xlink:href="#table"/></svg>
-                    <span class="fs-5">Заказы</span>
+                    <span class="fs-5">Замовлення</span>
                 </a>
             </li>
             @endperson

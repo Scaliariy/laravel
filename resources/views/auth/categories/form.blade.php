@@ -1,18 +1,18 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($category)
-    @section('title', 'Редактировать категорию ' . $category->name)
+    @section('title', 'Редагувати категорию ' . $category->name)
 @else
-    @section('title', 'Создать категорию')
+    @section('title', 'Створити категорию')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($category)
-            <h1>Редактировать Категорию <b>{{ $category->name }}</b></h1>
+            <h1>Редагувати Категорию <b>{{ $category->name }}</b></h1>
         @else
-            <h1>Добавить Категорию</h1>
+            <h1>Додати Категорию</h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"
@@ -39,7 +39,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва: </label>
                     <div class="col-sm-6">
                         @error('name')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -50,7 +50,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Название en: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Назва en: </label>
                     <div class="col-sm-6">
                         @error('name_en')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -61,7 +61,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Опис: </label>
                     <div class="col-sm-6">
                         @error('description')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -72,7 +72,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Описание en: </label>
+                    <label for="description" class="col-sm-2 col-form-label">Опис en: </label>
                     <div class="col-sm-6">
                         @error('description_en')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -90,7 +90,7 @@
                         </label>
                     </div>
                 </div>
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">Зберегти</button>
             </div>
         </form>
     </div>

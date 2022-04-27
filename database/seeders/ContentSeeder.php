@@ -86,7 +86,7 @@ class ContentSeeder extends Seeder
                 'name' => 'Мобильные телефоны',
                 'name_en' => 'Mobile phones',
                 'code' => 'mobiles',
-                'description' => 'В этом разделе вы найдёте самые популярные мобильные телефонамы по отличным ценам!',
+                'description' => 'В этом разделе вы найдёте самые популярные мобильные телефонамы по отличным Цінам!',
                 'description_en' => 'Mobile phones section with best prices for best popular phones!',
                 'image' => 'images/categories/mobile.jpg',
                 'products' => [

@@ -1,5 +1,5 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Варианты свойства')
 
@@ -13,13 +13,13 @@
                     #
                 </th>
                 <th>
-                    Свойство
+                    Властивість
                 </th>
                 <th>
-                    Название
+                    Назва
                 </th>
                 <th>
-                    Действия
+                    Дії
                 </th>
             </tr>
             @foreach($propertyOptions as $propertyOption)
@@ -33,7 +33,7 @@
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('property-options.show', [$property, $propertyOption]) }}">Открыть</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('property-options.edit', [$property, $propertyOption]) }}">Редактировать</a>
+                                   href="{{ route('property-options.edit', [$property, $propertyOption]) }}">Редагувати</a>
                                 @csrf
                                 @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="Удалить"></form>
@@ -45,6 +45,6 @@
         </table>
         {{$propertyOptions->links('pagination::bootstrap-4')}}
         <a class="btn btn-success" type="button"
-           href="{{ route('property-options.create', $property) }}">Добавить вариант свойства</a>
+           href="{{ route('property-options.create', $property) }}">Додати вариант свойства</a>
     </div>
 @endsection

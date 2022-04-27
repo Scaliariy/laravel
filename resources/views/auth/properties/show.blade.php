@@ -1,11 +1,11 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
-@section('title', 'Свойство ' . $property->name)
+@section('title', 'Властивість ' . $property->name)
 
 @section('content')
     <div class="col-md-12">
-        <h1>Свойство {{ $property->name }}</h1>
+        <h1>Властивість {{ $property->name }}</h1>
         <table class="table">
             <tbody>
             <tr>
@@ -13,7 +13,7 @@
                     Поле
                 </th>
                 <th>
-                    Значение
+                    Значення
                 </th>
             </tr>
             <tr>
@@ -21,15 +21,15 @@
                 <td>{{ $property->id }}</td>
             </tr>
             <tr>
-                <td>Название</td>
+                <td>Назва</td>
                 <td>{{ $property->name }}</td>
             </tr>
             <tr>
-                <td>Название en</td>
+                <td>Назва en</td>
                 <td>{{ $property->name_en }}</td>
             </tr>
 {{--            <tr>--}}
-{{--                <td>Кол-во товаров</td>--}}
+{{--                <td>Кількість товаров</td>--}}
 {{--                <td>{{ $property->products->count() }}</td>--}}
 {{--            </tr>--}}
             </tbody>

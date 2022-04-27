@@ -30,7 +30,7 @@ class ProductsTableSeeder extends Seeder
                     'description_en' => 'Folic acid tablets 1 mg',
                     'instruction' => 'instructions/folieva-kyslota-tabletky-1-mh.html',
                     'name' => 'Фолієва кислота таблетки 1 мг',
-                    'name_en' => 'Фолієва кислота таблетки 1 мг',
+                    'name_en' => 'Folic acid tablets 1 mg',
                 ),
             1 =>
                 array(
@@ -42,7 +42,7 @@ class ProductsTableSeeder extends Seeder
                     'description_en' => 'As a dietary supplement for the prevention of folic acid and iodine deficiency, especially for women planning pregnancy, during pregnancy and lactation, as well as enriching the diet of the population living in regions with insufficient iodine in the environment.',
                     'instruction' => null,
                     'name' => 'Йодофол таблетки',
-                    'name_en' => 'Йодофол таблетки',
+                    'name_en' => 'Iodofol tablets',
                 ),
             2 =>
                 array(
@@ -54,7 +54,7 @@ class ProductsTableSeeder extends Seeder
                     'description_en' => 'In children\'s nutrition Children\'s Brewer\'s Yeast is a necessary complex of natural proteins, minerals, vitamins and enzymes that stimulate the process of protein breakdown, which reduces the time of absorption of all necessary drugs in the blood.',
                     'instruction' => 'instructions/osokor-pyvni-drizhdzhi-dytyachi-tabletky-0-5-h-100-sht.html',
                     'name' => 'Осокор Пивні Дріжджі дитячі таблетки 0,5 г',
-                    'name_en' => 'Осокор Пивні Дріжджі дитячі таблетки 0,5 г',
+                    'name_en' => 'Osokor Brewer\'s Yeast baby tablets 0.5 g',
                 ),
             3 =>
                 array(
@@ -126,7 +126,7 @@ class ProductsTableSeeder extends Seeder
                     'description_en' => null,
                     'instruction' => null,
                     'name' => 'Gillette Blue Simple 3 Бритви одноразові 4 шт',
-                    'name_en' => 'Gillette Blue Simple 3 Бритви одноразові 4 шт',
+                    'name_en' => 'Gillette Blue Simple 3 Disposable razors 4 pcs',
                 ),
             9 =>
                 array(
@@ -174,7 +174,7 @@ class ProductsTableSeeder extends Seeder
                     'description_en' => null,
                     'instruction' => null,
                     'name' => 'Doliva Бальзам для шкіри навколо очей 15 мл 1 банка',
-                    'name_en' => 'Doliva Бальзам для шкіри навколо очей 15 мл 1 банка',
+                    'name_en' => 'Doliva Eye Balm 15 ml 1 jar',
                 ),
             13 =>
                 array(

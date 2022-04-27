@@ -1,5 +1,5 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Свойства')
 
@@ -13,10 +13,10 @@
                     #
                 </th>
                 <th>
-                    Название
+                    Назва
                 </th>
                 <th>
-                    Действия
+                    Дії
                 </th>
             </tr>
             @foreach($properties as $property)
@@ -29,7 +29,7 @@
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('properties.show', $property) }}">Открыть</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('properties.edit', $property) }}">Редактировать</a>
+                                   href="{{ route('properties.edit', $property) }}">Редагувати</a>
                                 <a class="btn btn-info" type="button"
                                    href="{{ route('property-options.index', $property) }}">Значения свойства</a>
                                 @csrf
@@ -43,6 +43,6 @@
         </table>
         {{$properties->links('pagination::bootstrap-4')}}
         <a class="btn btn-success" type="button"
-           href="{{ route('properties.create') }}">Добавить свойство</a>
+           href="{{ route('properties.create') }}">Додати властивість</a>
     </div>
 @endsection

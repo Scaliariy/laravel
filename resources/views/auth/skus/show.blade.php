@@ -1,5 +1,5 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Sku ' . $sku->name)
 
@@ -14,7 +14,7 @@
                     Поле
                 </th>
                 <th>
-                    Значение
+                    Значення
                 </th>
             </tr>
             <tr>
@@ -22,7 +22,7 @@
                 <td>{{ $sku->id }}</td>
             </tr>
             <tr>
-                <td>Цена</td>
+                <td>Ціна</td>
                 <td>{{ $sku->price }} {{ $currencySymbol }}</td>
             </tr>
             <tr>

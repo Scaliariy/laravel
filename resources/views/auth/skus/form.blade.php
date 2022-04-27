@@ -1,18 +1,18 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($sku)
-    @section('title', 'Редактировать Sku ' . $sku->name)
+    @section('title', 'Редагувати Sku ' . $sku->name)
 @else
-    @section('title', 'Создать Sku')
+    @section('title', 'Створити Sku')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($sku)
-            <h1>Редактировать Sku <b>{{ $sku->name }}</b></h1>
+            <h1>Редагувати Sku <b>{{ $sku->name }}</b></h1>
         @else
-            <h1>Добавить Sku</h1>
+            <h1>Додати Sku</h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"
@@ -30,7 +30,7 @@
 
                 <br>
                 <div class="input-group row">
-                    <label for="price" class="col-sm-2 col-form-label">Цена: </label>
+                    <label for="price" class="col-sm-2 col-form-label">Ціна: </label>
                     <div class="col-sm-2">
                         @include('auth.layouts.error',['fieldName'=>'price'])
                         <input type="text" class="form-control" name="price" id="price"
@@ -77,7 +77,7 @@
 
                 <div class="col-sm-10">
                     <br>
-                    <button class="btn btn-success">Сохранить</button>
+                    <button class="btn btn-success">Зберегти</button>
                 </div>
             </div>
         </form>

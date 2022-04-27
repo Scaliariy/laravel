@@ -1,5 +1,5 @@
-{{--@extends('auth.layouts.master')--}}
-@extends('auth.layouts.sidebar')
+@extends('auth.layouts.master')
+{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Товары')
 
@@ -16,16 +16,16 @@
                     Код
                 </th>
                 <th>
-                    Название
+                    Назва
                 </th>
                 <th>
-                    Категория
+                    Категорія
                 </th>
                 <th>
-                    Кол-во товарных предложений
+                    Кількість товарных предложений
                 </th>
                 <th>
-                    Действия
+                    Дії
                 </th>
             </tr>
             @foreach($products as $product)
@@ -43,7 +43,7 @@
                                 <a class="btn btn-success" type="button"
                                    href="{{ route('skus.index', $product) }}">Skus</a>
                                 <a class="btn btn-warning" type="button"
-                                   href="{{ route('products.edit', $product) }}">Редактировать</a>
+                                   href="{{ route('products.edit', $product) }}">Редагувати</a>
                                 @csrf
                                 @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="Удалить"></form>
@@ -54,6 +54,6 @@
             </tbody>
         </table>
         {{$products->links('pagination::bootstrap-4')}}
-        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Добавить товар</a>
+        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Додати товар</a>
     </div>
 @endsection

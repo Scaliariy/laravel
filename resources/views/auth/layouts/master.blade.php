@@ -27,29 +27,30 @@
     <nav class="navbar navbar-default navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}">
-                Вернуться на сайт
+                Повернутись на сайт
             </a>
 
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     @admin
-                    <li><a href="{{route('categories.index')}}">Категории</a></li>
-                    <li><a href="{{ route('products.index') }}">Товары</a></li>
-                    <li><a href="{{ route('properties.index') }}">Свойства</a></li>
-                    <li><a href="{{ route('home') }}">Заказы</a></li>
+                    <li><a href="{{route('categories.index')}}">Категорії</a></li>
+                    <li><a href="{{ route('products.index') }}">Товари</a></li>
+                    <li><a href="{{ route('properties.index') }}">Властивості</a></li>
+                    <li><a href="{{ route('home') }}">Замовлення</a></li>
+                    <li><a href="{{ route('users.index') }}">Користувачі</a></li>
                     @endadmin
                     @person
-                    <li><a href="{{ route('person.orders.index') }}">Заказы</a></li>
+                    <li><a href="{{ route('person.orders.index') }}">Замовлення</a></li>
                     @endperson
                 </ul>
 
                 @guest
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Войти</a>
+                            <a class="nav-link" href="{{ route('login') }}">Увійти</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Зарегистрироваться</a>
+                            <a class="nav-link" href="{{ route('register') }}">Зареєструватись</a>
                         </li>
                     </ul>
                 @endguest
@@ -61,9 +62,9 @@
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false" v-pre>
                                 @admin
-                                Администратор - {{\Illuminate\Support\Facades\Auth::user()->name}}
+                                    Адміністратор - {{\Illuminate\Support\Facades\Auth::user()->name}}
                                 @else
-                                    Пользователь - {{\Illuminate\Support\Facades\Auth::user()->name}}
+                                    Користувач - {{\Illuminate\Support\Facades\Auth::user()->name}}
                                     @endadmin
                             </a>
 
