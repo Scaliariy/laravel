@@ -30,8 +30,6 @@ class CurrencyConversion
 
     public static function getCurrencyFromSession()
     {
-//        session()->forget('currency');
-//        dd(self::DEFAULT_CURRENCY_CODE, session('currency'));
         return session('currency', self::DEFAULT_CURRENCY_CODE);
     }
 
