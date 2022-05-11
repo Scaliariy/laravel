@@ -31,4 +31,13 @@ return [
     'not_available' => 'Недоступний',
     'project_reset' => 'Проект було скинуто в початковий стан',
     'search' => 'Знайти',
+    'password' => 'Пароль',
+    'email' => 'Email',
+    'forgot_password' => 'Забули пароль?',
+    'authorization' => 'Авторизація',
+    'registration' => 'Реєстрація',
+    'return_home' => 'Повернутись на сайт',
+    'name' => 'Ім\'я',
+    'confirm_password' => 'Підтвердіть пароль',
+    'popular_products' => 'Найпопулярніші товари',
 ];
