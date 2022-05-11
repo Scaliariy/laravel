@@ -8,12 +8,18 @@ use App\Http\Controllers\Admin\PropertyOptionController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BasketController;
+use App\Http\Controllers\ChangeProfileController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SkuController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +31,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes([
-    'reset' => false,
-    'confirm' => false,
-    'verify' => false,
-]);
 
 Route::get('locale/{locale}', [MainController::class, 'changeLocale'])->name('locale');
 Route::get('currency/{currencyCode}', [MainController::class, 'changeCurrency'])->name('currency');
@@ -37,6 +38,11 @@ Route::get('currency/{currencyCode}', [MainController::class, 'changeCurrency'])
 Route::get('/logout', [LoginController::class, 'logout'])->name('get-logout');
 
 Route::middleware(['set_locale'])->group(function () {
+
+    Auth::routes([
+        'confirm' => false,
+        'verify' => false,
+    ]);
 
     Route::get('reset', [ResetController::class, 'reset'])->name('reset');
 
@@ -65,6 +71,7 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::get('/users/{user}/orders', [UserController::class, 'orders'])->name('user_orders');
             });
         });
+        Route::resource('profile', ChangeProfileController::class);
     });
 
 
@@ -87,8 +94,9 @@ Route::middleware(['set_locale'])->group(function () {
 
     Route::get('/{category}', [MainController::class, 'category'])->name('category');
     Route::get('/{category}/{product?}/{sku}', [MainController::class, 'sku'])->name('sku');
-
 });
+
+
 
 
 

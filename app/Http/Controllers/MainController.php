@@ -56,6 +56,11 @@ class MainController extends Controller
     public function category($code)
     {
         $category = Category::where('code', $code)->first();
+
+        if (is_null($category)) {
+            abort(404, 'Page not found');
+        }
+
         return view('category', compact('category'));
     }
 

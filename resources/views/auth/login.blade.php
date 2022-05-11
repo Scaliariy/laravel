@@ -1,18 +1,18 @@
 @extends('auth.layouts.master')
 {{--@extends('auth.layouts.sidebar')--}}
 
-@section('title', 'Авторизация')
+@section('title', __('main.authorization'))
 
 @section('content')
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Авторизация</div>
+            <div class="card-header">@lang('main.authorization')</div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}" aria-label="Login">
                     @csrf
                     <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail</label>
+                        <label for="email" class="col-sm-4 col-form-label text-md-right">@lang('main.email')</label>
 
                         <div class="col-md-6">
                             <input id="email" type="email" class="form-control"
@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">Пароль</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-right">@lang('main.password')</label>
 
                         <div class="col-md-6">
                             <input id="password" type="password" class="form-control"
@@ -30,10 +30,16 @@
 
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-md-4 col-form-label text-md-right"></label>
+                        <div class="col-md-6">
+                            <a href="{{route('password.request')}}"> @lang('main.forgot_password') </a>
+                        </div>
+                    </div>
                     <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary">
-                                Войти
+                                @lang('main.login')
                             </button>
                         </div>
                     </div>

@@ -1,11 +1,11 @@
 @extends('auth.layouts.master')
 {{--@extends('auth.layouts.sidebar')--}}
 
-@section('title', 'Категории')
+@section('title', 'Категорії')
 
 @section('content')
     <div class="col-md-12">
-        <h1>Категории</h1>
+        <h1>Категорії</h1>
         <table class="table">
             <tbody>
             <tr>

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'online_shop' => 'Online Shop',
+    'online_shop' => 'Online Pharmacy',
     'all_products' => 'All products',
     'product' => 'Product',
     'categories' => 'Categories',
@@ -31,4 +31,13 @@ return [
     'not_available' => 'Not available',
     'project_reset' => 'The Project was reset',
     'search' => 'Search',
+    'password' => 'Password',
+    'email' => 'Email',
+    'forgot_password' => 'Forgot password?',
+    'authorization' => 'Authorization',
+    'registration' => 'Registration',
+    'return_home' => 'Return to the site',
+    'name' => 'Name',
+    'confirm_password' => 'Confirm password',
+    'popular_products' => 'Popular products',
 ];

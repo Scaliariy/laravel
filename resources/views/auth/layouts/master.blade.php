@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Админка: @yield('title')</title>
-
+    @admin
+    <title>Панель адміністратора: @yield('title')</title>
+    @endadmin
+    @person
+    <title>Кабінет: @yield('title')</title>
+    @endperson
     <!-- Scripts -->
     <script src="/js/app.js" defer></script>
 
@@ -27,7 +30,7 @@
     <nav class="navbar navbar-default navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ route('index') }}">
-                Повернутись на сайт
+                @lang('main.return_home')
             </a>
 
             <div id="navbar" class="collapse navbar-collapse">
@@ -47,10 +50,10 @@
                 @guest
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Увійти</a>
+                            <a class="nav-link" href="{{ route('login') }}">@lang('main.login')</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Зареєструватись</a>
+                            <a class="nav-link" href="{{ route('register') }}">@lang('main.registration')</a>
                         </li>
                     </ul>
                 @endguest
@@ -72,13 +75,17 @@
                                 <a class="dropdown-item" href="{{ route('logout')}}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Выйти
+                                    Вийти
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout')}}" method="POST"
                                       style="display: none;">
                                     @csrf
                                 </form>
+
+                                <a class="dropdown-item" href="{{ route('profile.edit', Auth::user()) }}">
+                                    Редагувати профіль
+                                </a>
                             </div>
                         </li>
                     </ul>

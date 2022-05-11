@@ -115,7 +115,7 @@
             <li>
                 <a href="{{route('categories.index')}}" class="nav-link link-dark @activeadminpanel('categories.index')">
                     <svg class="bi me-2" width="20" height="20"><use xlink:href="#categories"/></svg>
-                    <span class="fs-5">Категории</span>
+                    <span class="fs-5">Категорії</span>
                 </a>
             </li>
             <li>
@@ -181,7 +181,7 @@
                 <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                     <li><a class="dropdown-item" href="{{ route('logout')}}"
                            onclick="event.preventDefault();
-                       document.getElementById('logout-form').submit();">Выйти</a>
+                       document.getElementById('logout-form').submit();">Вийти</a>
                         <form id="logout-form" action="{{ route('logout')}}" method="POST"
                               style="display: none;">
                             @csrf
