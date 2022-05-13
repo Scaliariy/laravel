@@ -10,8 +10,10 @@ class ResetController extends Controller
 {
     public function reset()
     {
+        Artisan::call('migrate:fresh --seed');
+
         foreach (['images/categories_apteka', 'images/products_apteka', 'instructions'] as $folder) {
-            Artisan::call('migrate:fresh --seed');
+
             Storage::deleteDirectory($folder);
             Storage::makeDirectory($folder);
             $files = Storage::disk('reset')->files($folder);
