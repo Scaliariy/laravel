@@ -25,7 +25,7 @@ class SkuController extends Controller
         $params = $request->all();
         unset($params['image']);
         if ($request->has('image')) {
-            $path = $request->file('image')->store('images/products');
+            $path = $request->file('image')->store('images/products_apteka');
             $params['image'] = $path;
         } else {
             $path = 'images/image-not-found.png';
@@ -53,7 +53,7 @@ class SkuController extends Controller
         unset($params['image']);
         if ($request->has('image')) {
             Storage::delete($sku->image);
-            $path = $request->file('image')->store('images/products');
+            $path = $request->file('image')->store('images/products_apteka');
             $params['image'] = $path;
         }
 
