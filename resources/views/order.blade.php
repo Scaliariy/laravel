@@ -3,49 +3,37 @@
 @section('title', __('basket.place_order'))
 
 @section('content')
-    <h1>@lang('basket.approve_order'):</h1>
-    <div class="container">
-        <div class="row justify-content-center">
-            <p>@lang('basket.full_cost'): <b>{{ $order->getFullSum() }} {{ $currencySymbol }}</b></p>
-            <form action="{{ route('basket-confirm') }}" method="POST">
-                <div>
-                    <p>@lang('basket.personal_data'):</p>
-
-                    <div class="container">
-                        <div class="form-group">
-                            <label for="name" class="control-label col-lg-offset-3 col-lg-2">@lang('basket.data.name')
-                                : </label>
-                            <div class="col-lg-4">
-                                <input type="text" name="name" id="name" value="" class="form-control">
-                            </div>
+    <div class="container py-3 text-center">
+        <h1>@lang('basket.approve_order'):</h1>
+        <div class="row g-3 justify-content-center align-items-center">
+            <div class="col-lg-6 col-8 mb-5">
+                <p class="mt-3">@lang('basket.full_cost'): <b>{{ $order->getFullSum() }} {{ $currencySymbol }}</b></p>
+                <p>@lang('basket.personal_data'):</p>
+                <form action="{{ route('basket-confirm') }}" method="POST">
+                    <div class="row pt-3 mb-3 justify-content-center align-items-center text-start">
+                        <label for="name" class="col-md-2 col-sm-4 col-form-label">@lang('basket.data.name'): </label>
+                        <div class="col-md-10 col-sm-8">
+                            <input type="text" name="name" class="form-control" id="name">
                         </div>
-                        <br>
-                        <br>
-                        <div class="form-group">
-                            <label for="phone" class="control-label col-lg-offset-3 col-lg-2">@lang('basket.data.phone')
-                                : </label>
-                            <div class="col-lg-4">
-                                <input type="text" name="phone" id="phone" value="" class="form-control">
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        @guest
-                            <div class="form-group">
-                                <label for="name"
-                                       class="control-label col-lg-offset-3 col-lg-2">@lang('basket.data.email')
-                                    : </label>
-                                <div class="col-lg-4">
-                                    <input type="text" name="email" id="email" value="" class="form-control">
-                                </div>
-                            </div>
-                        @endguest
                     </div>
-                    <br>
+                    <div class="row pt-3 mb-3 justify-content-center align-items-center text-start">
+                        <label for="phone" class="col-md-2 col-sm-4 col-form-label">@lang('basket.data.phone'): </label>
+                        <div class="col-md-10 col-sm-8">
+                            <input type="text" name="phone" class="form-control" id="phone">
+                        </div>
+                    </div>
+                    @guest
+                        <div class="row mb-3 justify-content-center align-items-center text-center">
+                            <label for="email" class="col-sm-3 col-form-label">@lang('basket.data.email'): </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="email" class="form-control" id="email">
+                            </div>
+                        </div>
+                    @endguest
                     @csrf
-                    <input type="submit" class="btn btn-success" value="@lang('basket.approve_order')">
-                </div>
-            </form>
+                    <input type="submit" class="mt-3 btn btn-success" value="@lang('basket.approve_order')">
+                </form>
+            </div>
         </div>
     </div>
 @endsection

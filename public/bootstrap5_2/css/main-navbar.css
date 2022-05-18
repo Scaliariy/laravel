@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #f5f6fb;
+}
+
+.navbar {
+    background: #213865;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.header {
+    background-color: #f2f6e9;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /*padding: 20px;*/
+}
+
+.page-footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 60px 0 30px;
+}
+
+.footer-copyright {
+    color: #666;
+    padding: 40px 0;
+}
+
+#currencys-dropdown {
+    background-color: #f5f6fb;
+    width: 45px;
+    min-width: 45px;
+}
+
+div.labels {
+    position: absolute;
+}
+
+div.labels span.badge {
+    display: block;
+}
+
+div.img-card {
+    height: 175px;
+    width: 100%;
+}
+
+#product-img-card {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+div.categories-img {
+    height: 200px;
+    width: 100%;
+}
+
+#categories-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+div.product-img {
+    height: 250px;
+    width: 100%;
+}
+
+#product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.module {
+    max-width: 100%;
+    height: 72px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    padding: 0;
+    color: black;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.card {
+    height: 100%;
+}
+
