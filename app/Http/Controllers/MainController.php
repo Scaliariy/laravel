@@ -39,11 +39,11 @@ class MainController extends Controller
                 '%' . $request->search . '%');
 
             if ($skusQuery->get()->isEmpty()) {
-                session()->now('warning', 'По вашему запросу ничего не найдено');
+                session()->now('warning', __('main.not_found'));
             }
         }
 
-        $skus = $skusQuery->paginate(6)->withPath("?" . $request->getQueryString());
+        $skus = $skusQuery->paginate(12)->withPath("?" . $request->getQueryString());
 
         return view('index', compact('skus'));
     }
@@ -82,7 +82,7 @@ class MainController extends Controller
             'email' => $request->email,
             'sku_id' => $sku->id,
         ]);
-        return redirect()->back()->with('success', 'Спасибо, мы сообщим вам о поступлении товара');
+        return redirect()->back()->with('success', __('mail/subscription.thanks_for_subscription'));
     }
 
     public function changeLocale($locale)

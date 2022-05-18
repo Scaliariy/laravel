@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'online_shop' => 'Інтернет Аптека',
+    'online_shop' => 'Аптека',
     'all_products' => 'Всі товари',
     'product' => 'Товар',
     'categories' => 'Категорії',
@@ -31,6 +31,7 @@ return [
     'not_available' => 'Недоступний',
     'project_reset' => 'Проект було скинуто в початковий стан',
     'search' => 'Знайти',
+    'not_found' => 'На ваш запит нічого не знайдено',
     'password' => 'Пароль',
     'email' => 'Email',
     'forgot_password' => 'Забули пароль?',

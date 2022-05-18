@@ -252,13 +252,13 @@ class ProductsTableSeeder extends Seeder
                 array(
                     'id' => 37,
                     'category_id' => 7,
-                    'code' => 'maska-medychna-nesterylna-z-vushkamy-1-sht',
+                    'code' => 'maska-medychna-nesterylna-z-vushkamy-100-sht',
                     'deleted_at' => null,
                     'description' => null,
                     'description_en' => null,
                     'instruction' => null,
-                    'name' => 'Маска медична нестерильна з вушками 1 шт',
-                    'name_en' => 'Non-sterile medical mask with ears 1 pc',
+                    'name' => 'Маска медична нестерильна з вушками 100 шт',
+                    'name_en' => 'Non-sterile medical mask with ears 100 pc',
                 ),
             20 =>
                 array(
