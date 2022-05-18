@@ -79,9 +79,10 @@ class Basket
     {
         if ($this->order->skus->contains($sku)) {
             $pivotRow = $this->order->skus->where('id', $sku->id)->first();
+            $key = $this->order->skus->search($pivotRow);
 
             if ($pivotRow->countInOrder < 2) {
-                $this->order->skus->pop();
+                $this->order->skus->pull($key);
             } else {
                 $pivotRow->countInOrder--;
             }
