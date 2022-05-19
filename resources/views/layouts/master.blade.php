@@ -15,7 +15,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="{{ route('index') }}">@lang('main.online_shop')</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -56,7 +56,6 @@
             <form class="d-flex" method="GET" role="search" action="{{route("index")}}">
                 <input class="form-control me-2" type="search" placeholder="@lang('main.search')" aria-label="Search"
                        name="search" id="search">
-                {{--                <button class="btn btn-outline-success" type="submit">Search</button>--}}
             </form>
             <ul class="navbar-nav d-flex justify-content-lg-center align-items-lg-center">
                 @guest
