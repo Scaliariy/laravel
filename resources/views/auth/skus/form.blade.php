@@ -10,7 +10,7 @@
 @section('content')
     <div class="col-md-12">
         @isset($sku)
-            <h1>Редагувати Sku <b>{{ $sku->name }}</b></h1>
+            <h1>Редагувати Sku продукту <b>{{ \App\Models\Product::where('id',$sku->product_id)->get()->firstOrFail()->name }}</b></h1>
         @else
             <h1>Додати Sku</h1>
         @endisset
@@ -27,14 +27,13 @@
                     @method('PUT')
                 @endisset
                 @csrf
-
                 <br>
                 <div class="input-group row">
                     <label for="price" class="col-sm-2 col-form-label">Ціна: </label>
                     <div class="col-sm-2">
                         @include('auth.layouts.error',['fieldName'=>'price'])
                         <input type="text" class="form-control" name="price" id="price"
-                               value="@isset($sku){{ $sku->price }}@endisset">
+                               value="@isset($sku){{ round($sku->getRawOriginal('price'),2) }}@endisset">
                     </div>
                 </div>
                 <br>

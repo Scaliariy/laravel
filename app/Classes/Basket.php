@@ -71,7 +71,7 @@ class Basket
             return false;
         }
         $this->order->saveOrder($name, $phone);
-        Mail::to($email)->send(new OrderCreated($name, $this->getOrder()));
+        Mail::to($email)->queue(new OrderCreated($name, $this->getOrder()));
         return true;
     }
 

@@ -28,7 +28,7 @@ class Subscription extends Model
         $subscriptions = self::activeBySkuId($sku->id)->get();
 
         foreach ($subscriptions as $subscription) {
-            Mail::to($subscription->email)->send(new SendSubscriptionMessage($sku));
+            Mail::to($subscription->email)->queue(new SendSubscriptionMessage($sku));
             $subscription->status = 1;
             $subscription->save();
         }

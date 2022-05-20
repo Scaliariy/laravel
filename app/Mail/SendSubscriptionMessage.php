@@ -6,6 +6,7 @@ use App\Models\Sku;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\App;
 
 class SendSubscriptionMessage extends Mailable
 {
@@ -19,6 +20,7 @@ class SendSubscriptionMessage extends Mailable
     public function __construct(Sku $sku)
     {
         $this->sku = $sku;
+        $this->locale = App::currentLocale();
     }
 
     /**

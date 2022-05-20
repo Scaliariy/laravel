@@ -37,10 +37,10 @@ class MainController extends Controller
         if ($request->filled('search')) {
             $skusQuery->join('products', 'products.id', '=', 'skus.product_id')->where('products.name', 'like',
                 '%' . $request->search . '%');
+        }
 
-            if ($skusQuery->get()->isEmpty()) {
-                session()->now('warning', __('main.not_found'));
-            }
+        if ($skusQuery->get()->isEmpty()) {
+            session()->now('warning', __('main.not_found'));
         }
 
         $skus = $skusQuery->paginate(12)->withPath("?" . $request->getQueryString());

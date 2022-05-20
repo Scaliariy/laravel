@@ -23,9 +23,9 @@
                         </div>
                     </div>
                     @guest
-                        <div class="row mb-3 justify-content-center align-items-center text-center">
-                            <label for="email" class="col-sm-3 col-form-label">@lang('basket.data.email'): </label>
-                            <div class="col-sm-9">
+                        <div class="row pt-3 mb-3 justify-content-center align-items-center text-start">
+                            <label for="email" class="col-md-2 col-sm-4 col-form-label">@lang('basket.data.email'): </label>
+                            <div class="col-md-10 col-sm-8">
                                 <input type="text" name="email" class="form-control" id="email">
                             </div>
                         </div>

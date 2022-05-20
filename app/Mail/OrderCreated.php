@@ -6,6 +6,7 @@ use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\App;
 
 class OrderCreated extends Mailable
 {
@@ -22,6 +23,7 @@ class OrderCreated extends Mailable
     {
         $this->name = $name;
         $this->order = $order;
+        $this->locale = App::currentLocale();
     }
 
     /**
