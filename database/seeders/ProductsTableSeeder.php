@@ -102,7 +102,7 @@ class ProductsTableSeeder extends Seeder
                     'description_en' => null,
                     'instruction' => null,
                     'name' => 'Manorm Coral Антисептик для рук (спрей) рідина 50 мл 1 флакон',
-                    'name_en' => 'Manorm Coral Антисептик для рук (спрей) рідина 50 мл 1 флакон',
+                    'name_en' => 'Manorm Coral Antiseptic for hands (spray) liquid of 50 ml 1 bottle',
                 ),
             7 =>
                 array(
