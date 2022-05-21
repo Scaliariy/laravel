@@ -41,4 +41,6 @@ return [
     'name' => 'Name',
     'confirm_password' => 'Confirm password',
     'popular_products' => 'Popular products',
+    'if_you_have' => 'If you have account, Please ',
+    'if_you_havent' => 'If you have not account ',
 ];

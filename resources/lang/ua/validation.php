@@ -146,7 +146,7 @@ return [
             'rule-name' => 'custom-message',
         ],
         'email' => [
-            'unique' => 'User with this mail already exists',
+            'unique' => 'Користувач з такою поштою вже існує',
         ],
     ],
 

@@ -1,52 +1,45 @@
-@extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
+@extends('auth.layouts.auth-master')
 
 @section('title', __('main.authorization'))
 
 @section('content')
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">@lang('main.authorization')</div>
 
-            <div class="card-body">
-                <form method="POST" action="{{ route('login') }}" aria-label="Login">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="mb-3">
+                    <h3>@lang('main.authorization')</h3>
+                </div>
+                <form method="POST" action="{{ route('login') }}" class="bg-light shadow p-4">
+                    <div class="mb-3">
+                        <label for="email">@lang('main.email')</label>
+                        <input type="email" class="form-control" name="email" id="email" required autofocus>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password">@lang('main.password')</label>
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Password" required>
+                    </div>
+
+                    <div class="row mb-3 ">
+                        <a href="{{route('password.request')}}"
+                           class="float-end text-decoration-none">@lang('main.forgot_password') </a>
+                    </div>
+
+                    <div class="mb-3 text-center">
+                        <button type="submit" class="btn btn-primary">@lang('main.login')</button>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <a class="btn btn-success" href="{{ route('index') }}">@lang('main.return_home')</a>
+                    </div>
+                    <hr>
+                    <p class="text-center mb-0">@lang('main.if_you_havent') <a
+                            href="{{ route('register') }}">@lang('main.registration')</a></p>
                     @csrf
-                    <div class="form-group row">
-                        <label for="email" class="col-sm-4 col-form-label text-md-right">@lang('main.email')</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control"
-                                   name="email" value="" required autofocus>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">@lang('main.password')</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control"
-                                   name="password" required>
-
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-4 col-form-label text-md-right"></label>
-                        <div class="col-md-6">
-                            <a href="{{route('password.request')}}"> @lang('main.forgot_password') </a>
-                        </div>
-                    </div>
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                @lang('main.login')
-                            </button>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>
     </div>
-
-
 @endsection
+

@@ -1,65 +1,63 @@
-@extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
+@extends('auth.layouts.auth-master')
 
 @section('title', __('main.registration'))
 
 @section('content')
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">@lang('main.registration')</div>
 
-            <div class="card-body">
-                <form method="POST" action="{{ route('register') }}" aria-label="Register">
-                    @csrf
-                    <div class="form-group row">
-                        <label for="name" class="col-md-4 col-form-label text-md-right">@lang('main.name')</label>
-
-                        <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" name="name"
-                                   value="" required autofocus>
-
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="mb-3">
+                    <h3>@lang('main.registration')</h3>
+                </div>
+                <form method="POST" action="{{ route('register') }}" class="border p-4 bg-light shadow">
+                    <div class="row">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="mb-3 col-md-12">
+                            <label for="name">@lang('main.name')</label>
+                            <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}"
+                                   required autofocus>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">@lang('main.email')</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control"
-                                   name="email" value="" required>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">@lang('main.password')</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control"
-                                   name="password" required>
-
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">@lang('main.confirm_password')</label>
-
-                        <div class="col-md-6">
-                            <input id="password-confirm" type="password" class="form-control"
-                                   name="password_confirmation"
+                        <div class="mb-3 col-md-12">
+                            <label for="email">@lang('main.email')</label>
+                            <input type="text" name="email" id="email" class="form-control" value="{{ old('email') }}"
                                    required>
                         </div>
-                    </div>
 
-                    <div class="form-group row mb-0">
-                        <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary">
-                                @lang('main.registration')
-                            </button>
+                        <div class="mb-3 col-md-12">
+                            <label for="password">@lang('main.password')</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3 col-md-12">
+                            <label for="password-confirm">@lang('main.confirm_password')</label>
+                            <input type="password" name="password_confirmation" id="password-confirm"
+                                   class="form-control" required>
+                        </div>
+
+                        <div class="col-md-12 mb-3 text-center">
+                            <button type="submit" class="btn btn-primary">@lang('main.registration')</button>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <a class="btn btn-success" href="{{ route('index') }}">@lang('main.return_home')</a>
                         </div>
                     </div>
+                    <hr>
+                    <p class="text-center mb-0">@lang('main.if_you_have') <a
+                            href="{{ route('login') }}">@lang('main.login')</a></p>
+                    @csrf
                 </form>
             </div>
         </div>
     </div>
 @endsection
+
