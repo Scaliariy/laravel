@@ -1,7 +1,7 @@
-@extends('auth.layouts.master')
+@extends('auth.layouts.auth-master')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -54,6 +54,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Reset Password') }}
                                 </button>
+                                <a class="btn btn-success mt-3" href="{{ route('index') }}">@lang('main.return_home')</a>
                             </div>
                         </div>
                     </form>
