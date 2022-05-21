@@ -189,7 +189,7 @@
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                 <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                    <p style="font-size: 14px; line-height: 140%;">@lang('mail/order_created.your_order') {{ $order->getAttributeValue('id') }} @lang('mail/order_created.created') {{ $order->getAttributeValue('created_at') }}</p>
+                                                    <p style="font-size: 14px; line-height: 140%;">@lang('mail/order_created.your_order') {{ $order->getAttributeValue('phone') }} @lang('mail/order_created.created') {{ $order->getAttributeValue('created_at') }}</p>
                                                 </div>
 
                                             </td>
