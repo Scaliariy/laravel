@@ -1,5 +1,4 @@
 @extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($sku)
     @section('title', 'Редагувати Sku ' . $sku->name)
@@ -38,7 +37,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="count" class="col-sm-2 col-form-label">Количество: </label>
+                    <label for="count" class="col-sm-2 col-form-label">Кількість: </label>
                     <div class="col-sm-2">
                         @include('auth.layouts.error',['fieldName'=>'count'])
                         <input type="text" class="form-control" name="count" id="count"
@@ -68,7 +67,7 @@
                     <br>
                     @endforeach
                     <div class="input-group row">
-                        <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
+                        <label for="image" class="col-sm-2 col-form-label">Зображення: </label>
                         <div class="col-sm-6">
                             <input class="form-control" type="file" name="image" id="image">
                         </div>

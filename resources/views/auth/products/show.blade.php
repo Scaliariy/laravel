@@ -1,5 +1,4 @@
 @extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Продукт ' . $product->name)
 
@@ -51,10 +50,10 @@
                         <span class="badge badge-success">Новинка</span>
                     @endif
                     @if($product->isRecommend())
-                        <span class="badge badge-warning">Рекомендуем</span>
+                        <span class="badge badge-warning">Рекомендуємо</span>
                     @endif
                     @if($product->isHit())
-                        <span class="badge badge-danger">Хит продаж</span>
+                        <span class="badge badge-danger">Хіт продаж</span>
                     @endif</td>
             </tr>
             </tbody>

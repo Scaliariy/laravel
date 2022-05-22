@@ -1,5 +1,4 @@
 @extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($product)
     @section('title', 'Редагувати товар ' . $product->name)
@@ -75,17 +74,21 @@
                     <label for="description" class="col-sm-2 col-form-label">Опис: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'description'])
-                        <textarea name="description" id="description" cols="72"
-                                  rows="7">@isset($product){{ $product->description }}@endisset</textarea>
+                        <div class="form-floating">
+                            <textarea class="form-control pt-2" name="description" id="description"
+                                      style="height: 100px">@isset($product){{ $product->description }}@endisset
+                            </textarea>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Опис en: </label>
+                    <label for="description_en" class="col-sm-2 col-form-label">Опис en: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'description_en'])
-                        <textarea name="description_en" id="description_en" cols="72"
-                                  rows="7">@isset($product){{ $product->description_en }}@endisset</textarea>
+                        <textarea class="form-control" name="description_en" id="description_en"
+                                  style="height: 100px">@isset($product){{ $product->description_en }}@endisset
+                            </textarea>
                     </div>
                 </div>
                 <br>
@@ -100,7 +103,7 @@
                     <label for="category_id" class="col-sm-2 col-form-label">Властивість: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error',['fieldName'=>'property_id'])
-                        <select class="selectpicker" name="property_id[]" multiple>
+                        <select class="form-select" name="property_id[]" multiple aria-label="multiple select">
                             @foreach($properties as $property)
                                 <option value="{{$property->id}}"
                                         @isset($product)
@@ -114,18 +117,10 @@
                     </div>
                 </div>
                 <br>
-{{--                    <div class="form-group row">--}}
-{{--                        <label for="code" class="col-sm-2 col-form-label">Видалити властивості</label>--}}
-{{--                        <div class="col-sm-10">--}}
-{{--                            <input type="checkbox" class="form-check-label big-checkbox" name="delete_properties"--}}
-{{--                                   id="delete_properties">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                <br>--}}
                 @foreach([
-                    'hit' => 'Хит',
+                    'hit' => 'Хіт',
                     'new' => 'Новинка',
-                    'recommend' => 'Рекомендуемые',
+                    'recommend' => 'Рекомендовано',
                 ] as $field => $title)
                     <div class="form-group row">
                         <label for="code" class="col-sm-2 col-form-label">{{$title}}</label>

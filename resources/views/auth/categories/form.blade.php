@@ -66,8 +66,12 @@
                         @error('description')
                         <div class="alert alert-danger">{{$message}}</div>
                         @enderror
-                        <textarea name="description" id="description" cols="72"
-                                  rows="7">@isset($category){{ $category->description }}@endisset</textarea>
+                        <div class="form-floating">
+                            <textarea class="form-control" name="description"
+                                      id="description"
+                                      style="height: 100px">@isset($category){{ $category->description }}@endisset
+                            </textarea>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -77,20 +81,22 @@
                         @error('description_en')
                         <div class="alert alert-danger">{{$message}}</div>
                         @enderror
-                        <textarea name="description_en" id="description_en" cols="72"
-                                  rows="7">@isset($category){{ $category->description_en }}@endisset</textarea>
+                        <div class="form-floating">
+                            <textarea class="form-control" name="description_en"
+                                      id="description_en"
+                                      style="height: 100px">@isset($category){{ $category->description_en }}@endisset
+                            </textarea>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
-                    <div class="col-sm-10">
-                        <label class="btn btn-default btn-file">
-                            Загрузить <input type="file" style="display: none;" name="image" id="image">
-                        </label>
+                    <label for="image" class="form-label col-sm-2 col-form-label">Зображення: </label>
+                    <div class="col-sm-6 mb-3">
+                        <input class="form-control" type="file" name="image" id="image">
                     </div>
                 </div>
-                <button class="btn btn-success">Зберегти</button>
+                <button class="btn btn-success mb-3">Зберегти</button>
             </div>
         </form>
     </div>

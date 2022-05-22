@@ -1,18 +1,17 @@
 @extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
 
 @isset($propertyOption)
-    @section('title', 'Редагувати вариант свойства ' . $propertyOption->name)
+    @section('title', 'Редагувати варіант властивості ' . $propertyOption->name)
 @else
-    @section('title', 'Створити вариант свойства')
+    @section('title', 'Створити варіант властивості')
 @endisset
 
 @section('content')
     <div class="col-md-12">
         @isset($propertyOption)
-            <h1>Редагувати вариант свойства <b>{{ $propertyOption->name }}</b></h1>
+            <h1>Редагувати варіант властивості <b>{{ $propertyOption->name }}</b></h1>
         @else
-            <h1>Додати вариант свойства <b>{{$property->name}}</b></h1>
+            <h1>Додати варіант властивості <b>{{$property->name}}</b></h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data"

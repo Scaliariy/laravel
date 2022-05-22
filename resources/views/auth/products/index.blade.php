@@ -6,54 +6,65 @@
 @section('content')
     <div class="col-md-12">
         <h1>Товары</h1>
-        <table class="table">
-            <tbody>
-            <tr>
-                <th>
-                    #
-                </th>
-                <th>
-                    Код
-                </th>
-                <th>
-                    Назва
-                </th>
-                <th>
-                    Категорія
-                </th>
-                <th>
-                    Кількість товарных предложений
-                </th>
-                <th>
-                    Дії
-                </th>
-            </tr>
-            @foreach($products as $product)
+        <div class="table-responsive-sm">
+            <table class="table align-middle">
+                <tbody>
                 <tr>
-                    <td>{{ $product->id}}</td>
-                    <td>{{ $product->code }}</td>
-                    <td>{{ $product->name }}</td>
-                    <td>{{ $product->category->name }}</td>
-                    <td>{{ $product->skus->count() }}</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            <form action="{{ route('products.destroy', $product) }}" method="POST">
-                                <a class="btn btn-success" type="button"
-                                   href="{{ route('products.show', $product) }}">Открыть</a>
-                                <a class="btn btn-success" type="button"
-                                   href="{{ route('skus.index', $product) }}">Skus</a>
-                                <a class="btn btn-warning" type="button"
-                                   href="{{ route('products.edit', $product) }}">Редагувати</a>
-                                @csrf
-                                @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Удалить"></form>
-                        </div>
-                    </td>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        Код
+                    </th>
+                    <th>
+                        Назва
+                    </th>
+                    <th>
+                        Категорія
+                    </th>
+                    <th>
+                        Кількість товарних пропозицій
+                    </th>
+                    <th>
+
+                    </th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
+                @foreach($products as $product)
+                    <tr>
+                        <td>{{ $product->id}}</td>
+                        <td>{{ $product->code }}</td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->category->name }}</td>
+                        <td>{{ $product->skus->count() }}</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <form action="{{ route('products.destroy', $product) }}" method="POST">
+                                    <div class="dropdown">
+                                        <a class="btn btn-primary dropdown-toggle" href="#" role="button"
+                                           id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Дії
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li><a class="dropdown-item" href="{{ route('products.show', $product) }}">Відкрити</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="{{ route('skus.index', $product) }}">Товарні
+                                                    пропозиції</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('products.edit', $product) }}">Редагувати</a>
+                                            </li>
+                                            <li>@method('DELETE')
+                                                <input class="dropdown-item link-danger" type="submit" value="Видалити"></li>
+                                        </ul>
+                                    </div>
+                                    @csrf
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
         {{$products->links('pagination::bootstrap-4')}}
-        <a class="btn btn-success" type="button" href="{{ route('products.create') }}">Додати товар</a>
+        <a class="btn btn-success mb-3" type="button" href="{{ route('products.create') }}">Додати товар</a>
     </div>
 @endsection

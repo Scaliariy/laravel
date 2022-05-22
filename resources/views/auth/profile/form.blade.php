@@ -1,5 +1,4 @@
 @extends('auth.layouts.master')
-{{--@extends('auth.layouts.sidebar')--}}
 
 @section('title', 'Редагувати інформацію - ' . $user->name)
 
@@ -11,9 +10,7 @@
             <h1>Редагування профілю <b>{{ $user->name }}</b></h1>
         @endisset
 
-        <form method="POST" enctype="multipart/form-data"
-              action="{{ route('profile.update', $user) }}"
-        >
+        <form method="POST" enctype="multipart/form-data" action="{{ route('profile.update', $user) }}">
             <div>
                 @isset($user)
                     @method('PUT')
@@ -42,7 +39,7 @@
                     </div>
                 </div>
                 <br>
-                <a href="{{route('password.request')}}"> Змінити пароль? </a>
+                <a class="link-primary" href="{{route('password.request')}}"> Змінити пароль? </a>
                 <br>
                 <br>
                 <button class="btn btn-success">Сохранить</button>
