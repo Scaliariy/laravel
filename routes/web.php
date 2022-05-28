@@ -78,6 +78,7 @@ Route::middleware(['set_locale'])->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('index');
     Route::get('/categories', [MainController::class, 'categories'])->name('categories');
     Route::post('subscription/{sku}', [MainController::class, 'subscribe'])->name('subscription');
+    Route::get('/about-us', [MainController::class, 'about_us'])->name('about_us');
 
     Route::group(['prefix' => 'basket'], function () {
         Route::post('/add/{sku}', [BasketController::class, 'basketAdd'])->name('basket-add');

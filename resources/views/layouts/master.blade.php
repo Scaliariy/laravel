@@ -40,6 +40,9 @@
                     <a class="nav-link" href="{{ route('basket') }}">@lang('main.cart')</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about_us') }}">@lang('main.about_us')</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('locale', __('main.set_lang')) }}">
                         @if(Lang::locale() == 'ua')
                             <img src="/img/us.png" alt="EN" style="width:20px;height:20px;">

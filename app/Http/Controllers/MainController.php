@@ -102,4 +102,9 @@ class MainController extends Controller
         session(['currency' => $currency->code]);
         return redirect()->back();
     }
+
+    public function about_us()
+    {
+        return view('about_us');
+    }
 }

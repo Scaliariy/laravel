@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'online_shop' => 'Apteka',
+    'online_shop' => 'Pharmacy',
     'all_products' => 'All products',
     'product' => 'Product',
     'categories' => 'Categories',
@@ -43,4 +43,14 @@ return [
     'popular_products' => 'Popular products',
     'if_you_have' => 'If you have account, Please ',
     'if_you_havent' => 'If you have not account ',
+    'online_apteka' => 'Online Pharmacy',
+    'about_us' => 'About us',
+    'to_goods' => 'To goods',
+    'about_us_txt_0' => '"Online Pharmacy" is a modern and convenient electronic platform for selling medical products.',
+    'about_us_txt_1' => 'Large Assortment',
+    'about_us_txt_1.1' => 'Find a drug on the site that is not available in many pharmacies.',
+    'about_us_txt_2' => 'Buy fast',
+    'about_us_txt_2.1' => 'No more than 3 clicks before purchase !',
+    'about_us_txt_3' => 'Always in touch',
+    'about_us_txt_3.1' => 'Terms of delivery are discussed by phone.',
 ];

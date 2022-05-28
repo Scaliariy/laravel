@@ -248,7 +248,7 @@
                                             <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                 <h1 style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-weight: normal; font-family: arial,helvetica,sans-serif; font-size: 22px;">
-                                                    <a href="http://ec2-18-194-196-49.eu-central-1.compute.amazonaws.com/">Apteka Online</a>
+                                                    <a href="http://ec2-18-194-196-49.eu-central-1.compute.amazonaws.com/">Pharmacy Online</a>
                                                 </h1>
 
                                             </td>
