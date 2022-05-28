@@ -53,4 +53,5 @@ return [
     'about_us_txt_2.1' => 'No more than 3 clicks before purchase !',
     'about_us_txt_3' => 'Always in touch',
     'about_us_txt_3.1' => 'Terms of delivery are discussed by phone.',
+    'continue_shopping' => 'Continue shopping',
 ];

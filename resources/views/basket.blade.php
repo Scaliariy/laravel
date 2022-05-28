@@ -80,5 +80,8 @@
         <div class="btn-group pull-right" role="group">
             <a type="button" class="btn btn-success" href="{{ route('basket-place') }}">@lang('basket.place_order')</a>
         </div>
+        <div class="btn-group pull-right my-2 my-sm-0" role="group">
+            <a type="button" class="btn btn-primary" href="{{ route('index') }}">@lang('main.continue_shopping')</a>
+        </div>
     </div>
 @endsection
