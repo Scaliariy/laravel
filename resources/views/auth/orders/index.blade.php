@@ -4,7 +4,12 @@
 
 @section('content')
     <div class="col-md-12">
-        <h1>Замовлення</h1>
+        @admin
+        @php
+            App::setLocale('ua');
+        @endphp
+        @endadmin
+        <h1>@lang('main.orders')</h1>
         <div class="table-responsive-sm">
             <table class="table">
                 <tbody>
@@ -13,19 +18,19 @@
                         #
                     </th>
                     <th>
-                        Ім'я
+                        @lang('main.name')
                     </th>
                     <th>
-                        Телефон
+                        @lang('main.phone')
                     </th>
                     <th>
-                        Коли замовлено
+                        @lang('main.time')
                     </th>
                     <th>
-                        Сума
+                        @lang('main.sum')
                     </th>
                     <th>
-                        Дії
+                        @lang('main.actions')
                     </th>
                 </tr>
                 @foreach($orders as $order)
@@ -43,7 +48,7 @@
                                    @else
                                    href="{{route('person.orders.show', $order)}}"
                                     @endadmin
-                                >Відкрити</a>
+                                >@lang('main.open')</a>
                             </div>
                         </td>
                     </tr>

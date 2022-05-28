@@ -60,7 +60,7 @@
                 @endadmin
                 @person
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('person.orders.index') }}">Замовлення</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('person.orders.index') }}">@lang('main.orders')</a>
                 </li>
                 @endperson
             </ul>
@@ -73,20 +73,20 @@
                         @admin
                                     Адміністратор - {{\Illuminate\Support\Facades\Auth::user()->name}}
                         @else
-                            Користувач - {{\Illuminate\Support\Facades\Auth::user()->name}}
+                            @lang('main.user') - {{\Illuminate\Support\Facades\Auth::user()->name}}
                             @endadmin
                     </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li><a href="{{ route('profile.edit', Auth::user()) }}" class="dropdown-item">
-                            <i class="bi bi-gear"></i> Редагувати профіль</a></li>
+                            <i class="bi bi-gear"></i> @lang('main.edit_profile')</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
                     <li><a href="{{ route('logout')}}" class="dropdown-item"
                            onclick="event.preventDefault();
                            document.getElementById('logout-form').submit();">
-                            <i class="bi bi-box-arrow-right"></i> Вийти </a>
+                            <i class="bi bi-box-arrow-right"></i> @lang('main.logout') </a>
                         <form id="logout-form" action="{{ route('logout')}}" method="POST"
                               style="display: none;">
                             @csrf

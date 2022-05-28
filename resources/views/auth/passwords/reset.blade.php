@@ -54,7 +54,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Reset Password') }}
                                 </button>
-                                <a class="btn btn-success mt-3" href="{{ route('index') }}">@lang('main.return_home')</a>
+                                <a class="btn btn-success mt-3 mt-sm-0" href="{{ route('index') }}">@lang('main.return_home')</a>
                             </div>
                         </div>
                     </form>

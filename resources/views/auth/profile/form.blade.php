@@ -5,9 +5,13 @@
 @section('content')
 
     <div class="col-md-12">
-
+        @admin
+        @php
+            App::setLocale('ua');
+        @endphp
+        @endadmin
         @isset($user)
-            <h1>Редагування профілю <b>{{ $user->name }}</b></h1>
+            <h1>@lang('main.edit_profile') <b>{{ $user->name }}</b></h1>
         @endisset
 
         <form method="POST" enctype="multipart/form-data" action="{{ route('profile.update', $user) }}">
@@ -18,7 +22,7 @@
                 @csrf
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Ім'я: </label>
+                    <label for="name" class="col-sm-2 col-form-label">@lang('main.name'): </label>
                     <div class="col-sm-6">
                         @error('name')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -29,7 +33,7 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Email: </label>
+                    <label for="name" class="col-sm-2 col-form-label">@lang('main.email'): </label>
                     <div class="col-sm-6">
                         @error('name_en')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -39,10 +43,10 @@
                     </div>
                 </div>
                 <br>
-                <a class="link-primary" href="{{route('password.request')}}"> Змінити пароль? </a>
+                <a class="link-primary" href="{{route('password.request')}}"> @lang('main.forgot_password')? </a>
                 <br>
                 <br>
-                <button class="btn btn-success">Сохранить</button>
+                <button class="btn btn-success">@lang('main.save')</button>
             </div>
         </form>
     </div>
