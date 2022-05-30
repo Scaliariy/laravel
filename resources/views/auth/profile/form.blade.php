@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <br>
-                <a class="link-primary" href="{{route('password.request')}}"> @lang('main.forgot_password')? </a>
+                <a class="link-primary" href="{{route('password.request')}}"> @lang('main.forgot_password') </a>
                 <br>
                 <br>
                 <button class="btn btn-success">@lang('main.save')</button>

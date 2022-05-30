@@ -44,8 +44,6 @@ Route::middleware(['set_locale'])->group(function () {
         'verify' => false,
     ]);
 
-    Route::get('reset', [ResetController::class, 'reset'])->name('reset');
-
     Route::middleware([Authenticate::class])->group(function () {
         Route::group([
             'prefix' => 'person',
@@ -69,6 +67,7 @@ Route::middleware(['set_locale'])->group(function () {
                 Route::resource('properties/{property}/property-options', PropertyOptionController::class);
                 Route::resource('users', UserController::class);
                 Route::get('/users/{user}/orders', [UserController::class, 'orders'])->name('user_orders');
+                Route::get('reset', [ResetController::class, 'reset'])->name('reset');
             });
         });
         Route::resource('profile', ChangeProfileController::class);

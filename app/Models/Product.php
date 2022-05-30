@@ -21,6 +21,7 @@ class Product extends Model
         'category_id',
         'description',
         'instruction',
+        'instruction_en',
         'hit',
         'new',
         'recommend',

@@ -65,9 +65,9 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                @if(!is_null($sku->product->instruction) && !empty($sku->product->instruction))
+                @if(!is_null($sku->product->instruction) || !empty($sku->product->instruction) || !is_null($sku->product->instruction_en) || !empty($sku->product->instruction_en))
                     <iframe style="width: 100%; height: 80vh; border: 1px solid #D1D1D1;"
-                            src="{{ Storage::url($sku->product->instruction) }}"></iframe>
+                            src="{{ Storage::url($sku->product->__('instruction')) }}"></iframe>
                 @else
                     <iframe style="width: 100%; height: 80vh; border: 1px solid #D1D1D1;"
                             src="{{ Storage::url('instructions/not_found_instruction.html') }}"></iframe>
