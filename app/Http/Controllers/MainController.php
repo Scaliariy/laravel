@@ -35,8 +35,10 @@ class MainController extends Controller
         }
 
         if ($request->filled('search')) {
-            $skusQuery->join('products', 'products.id', '=', 'skus.product_id')->where('products.name', 'like',
-                '%' . $request->search . '%');
+            $search = $request->search;
+            $skusQuery->whereHas('product', function ($query) use ($search) {
+                $query->where('products.name', 'like', '%' . $search . '%');
+            });
         }
 
         if ($skusQuery->get()->isEmpty()) {
